@@ -1,0 +1,444 @@
+---
+layout: page
+title: Final Projects 2025
+subtitle: Choose your project for Advanced Programming Spring 2025
+---
+
+<div class="projects-page">
+    <section class="project-selection">
+        <div class="selection-intro">
+            <h2>🎯 Choose Your Final Project</h2>
+            <p>Select <strong>one</strong> of the template projects below for your team (3-4 students), or propose a solo free-topic project. Your choice is <strong>final after Week 2 registration</strong>.</p>
+            
+            <div class="important-info">
+                <h3>📋 Key Information</h3>
+                <ul>
+                    <li><strong>Team Size:</strong> 3-4 students for template projects, solo only for free-topic</li>
+                    <li><strong>Registration Deadline:</strong> Week 2 Friday 23:59 CET</li>
+                    <li><strong>Template Repos:</strong> Each project includes skeleton code, tests, and CI pipeline</li>
+                    <li><strong>Assessment:</strong> Repository (35%), Math/Algorithms (25%), Tests/CI (20%), Usability (10%), Report/Demo (10%)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🔖 Template Projects</h2>
+        <div class="template-projects-grid">
+            {% assign template_projects = site.projects | where_exp: "project", "project.project_id != 'SOLO'" | sort: "difficulty" %}
+            {% for project in template_projects %}
+            <div class="project-option-card card">
+                <div class="project-header">
+                    <div class="project-id-badge">{{ project.project_id }}</div>
+                    <div class="difficulty-badge difficulty-{{ project.difficulty | downcase }}">{{ project.difficulty }}</div>
+                </div>
+                
+                <h3 class="project-title">{{ project.title | escape }}</h3>
+                <p class="focus-area">{{ project.focus_area }}</p>
+                <p class="project-summary">{{ project.summary }}</p>
+                
+                <div class="project-details">
+                    <div class="team-size">
+                        <strong>Team:</strong> {{ project.team_size }}
+                    </div>
+                    
+                    {% if project.technologies %}
+                    <div class="tech-stack">
+                        <strong>Technologies:</strong>
+                        {% for tech in project.technologies limit:3 %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                        {% if project.technologies.size > 3 %}
+                        <span class="tech-more">+{{ project.technologies.size | minus: 3 }} more</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="project-actions">
+                    <a href="{{ project.url | relative_url }}" class="btn btn-secondary">📖 View Details</a>
+                    {% if project.template_repo %}
+                    <a href="{{ project.template_repo }}" class="btn template-btn" target="_blank">
+                        📁 Template Repo <span class="external-icon">↗</span>
+                    </a>
+                    {% endif %}
+                    {% if project.brief_file %}
+                    <a href="{{ project.brief_file | relative_url }}" class="btn brief-btn" target="_blank">
+                        📋 Full Brief <span class="external-icon">↗</span>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <h2>🎨 Solo Free-Topic Project</h2>
+        {% assign solo_project = site.projects | where: "project_id", "SOLO" | first %}
+        {% if solo_project %}
+        <div class="solo-project-section">
+            <div class="solo-project-card card">
+                <div class="solo-header">
+                    <h3>{{ solo_project.title }}</h3>
+                    <div class="solo-badge">Individual Work</div>
+                </div>
+                
+                <p class="solo-description">{{ solo_project.summary }}</p>
+                
+                <div class="solo-requirements">
+                    <h4>Requirements</h4>
+                    <ul>
+                        <li><strong>Solo only:</strong> No team members allowed</li>
+                        <li><strong>Proposal required:</strong> One-paragraph proposal by {{ solo_project.proposal_deadline }}</li>
+                        <li><strong>No data science:</strong> Primary focus cannot be datasets/ML/statistics</li>
+                        <li><strong>Software engineering focus:</strong> Must demonstrate advanced programming concepts</li>
+                    </ul>
+                </div>
+                
+                <div class="solo-actions">
+                    <a href="{{ solo_project.url | relative_url }}" class="btn">📝 Proposal Guidelines</a>
+                    <a href="mailto:anna.smirnova@unil.ch" class="btn btn-secondary">✉️ Contact for Advice</a>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+    
+    <section class="project-rules">
+        <h2>📋 Project Rules & Requirements</h2>
+        <div class="rules-summary">
+            <div class="rule-card">
+                <h4>🏗️ Technical Standards</h4>
+                <ul>
+                    <li>Python ≥ 3.10, full CI/CD pipeline</li>
+                    <li>≥90% test coverage, mypy --strict</li>
+                    <li>Black formatting, flake8 linting</li>
+                    <li>Sphinx docs on GitHub Pages</li>
+                </ul>
+            </div>
+            
+            <div class="rule-card">
+                <h4>📦 Deliverables</h4>
+                <ul>
+                    <li>GitHub repo tagged v1.0.0</li>
+                    <li>Technical report (4-6 pages PDF)</li>
+                    <li>Live demo (15 minutes)</li>
+                    <li>All three are mandatory</li>
+                </ul>
+            </div>
+            
+            <div class="rule-card">
+                <h4>🤖 AI Tools Allowed</h4>
+                <ul>
+                    <li>GitHub Copilot, ChatGPT, Claude, etc.</li>
+                    <li>Keep AI_LOG.md of major contributions</li>
+                    <li>Be ready to explain AI-generated code</li>
+                    <li>Academic honesty rules apply</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="rules-link">
+            <a href="{{ '/PROJECT_RULES/' | relative_url }}" class="btn btn-large">📋 Read Full Project Rules</a>
+        </div>
+    </section>
+    
+</div>
+
+<style>
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.past-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featured-project {
+    border: 2px solid #ffd700;
+    background: linear-gradient(135deg, #fffbf0 0%, #ffffff 100%);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #8b6914;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: var(--surface-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.card-title {
+    margin: 0;
+    flex: 1;
+}
+
+.card-title a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: var(--primary-color);
+}
+
+.project-type-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.year-badge {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-team {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.tech-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag-small {
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+.tech-more {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-style: italic;
+    padding: 0.25rem 0.5rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.demo-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.demo-btn:hover {
+    background-color: #218838;
+    color: white;
+}
+
+.external-icon {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 0.25rem;
+}
+
+.past-project {
+    background-color: var(--surface-color);
+}
+
+.past-project .project-info {
+    padding: 1.25rem;
+}
+
+.past-project .card-title {
+    font-size: 1.1rem;
+}
+
+.current-projects, .past-projects {
+    margin-bottom: 4rem;
+}
+
+.current-projects h2, .past-projects h2 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.project-guidelines {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-guidelines h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--accent-color);
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.guideline-card {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.guideline-card h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.guideline-card ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.guideline-card li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.submission-info {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.submission-info h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.submission-info p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+}
+
+.empty-state .btn {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .past-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+    
+    .guidelines-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-badge {
+        position: static;
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
+}
+</style>

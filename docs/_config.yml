@@ -1,10 +1,61 @@
 
-remote_theme: pages-themes/minimal@v0.2.0
-title: Advanced Programming 2025 Course Materials
-# Enable automatic table of contents on the left
+title: "Advanced Programming 2025"
+description: "Course materials and resources for Advanced Programming at UNIL"
+baseurl: ""
+url: ""
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
   - jekyll-toc
-  - jekyll-remote-theme
+
+# Keep your existing TOC settings
 toc:
   min_level: 2
   max_level: 3
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: "slides"
+    values:
+      layout: "slide"
+
+collections:
+  lessons:
+    output: true
+    permalink: /:collection/:name/
+  assignments:
+    output: true
+    permalink: /:collection/:name/
+  projects:
+    output: true
+    permalink: /:collection/:name/
+  showcase:
+    output: true
+    permalink: /:collection/:name/
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - .git
+  - slides-src

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Final Project Rules | Advanced Programming 2025</title>
+    <meta name="description" content="Course materials and resources for Advanced Programming at UNIL">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="canonical" href="http://localhost:4000/PROJECT_RULES.html">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Final Project Rules | Advanced Programming 2025</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Final Project Rules" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Course materials and resources for Advanced Programming at UNIL" />
+<meta property="og:description" content="Course materials and resources for Advanced Programming at UNIL" />
+<link rel="canonical" href="http://localhost:4000/PROJECT_RULES.html" />
+<meta property="og:url" content="http://localhost:4000/PROJECT_RULES.html" />
+<meta property="og:site_name" content="Advanced Programming 2025" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Final Project Rules" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Course materials and resources for Advanced Programming at UNIL","headline":"Final Project Rules","url":"http://localhost:4000/PROJECT_RULES.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <nav class="site-nav">
+                <a class="site-title" href="/">Advanced Programming 2025</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/lessons/">Lessons</a>
+                    <a href="/assignments/">Assignments</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="page">
+    <header class="page-header">
+        <h1 class="page-title">Final Project Rules</h1>
+        
+        <p class="page-subtitle">Complete rulebook for Advanced Programming Spring 2025</p>
+        
+    </header>
+
+    <div class="page-content">
+        <h1 id="final-project-rulebook">FINAL-PROJECT RULEBOOK</h1>
+<p>MSc Advanced Programming · Spring 2025 UNIL</p>
+
+<blockquote>
+  <p><strong>These rules are CONTRACTUAL.</strong> Your GitHub repository, written report, and live demo are the
+graded deliverables for this course — <strong>none are optional</strong>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="0--quick-index">0 · Quick Index</h2>
+<ol>
+  <li><a href="#1-scope--allowed-project-types">Scope &amp; Allowed Project Types</a></li>
+  <li><a href="#2-team-formation--registration">Team Formation &amp; Registration</a></li>
+  <li><a href="#3-deliverables">Deliverables</a></li>
+  <li><a href="#4-technical-requirements">Technical Requirements</a></li>
+  <li><a href="#5-milestones--calendar">Milestones &amp; Calendar</a></li>
+  <li><a href="#6-grading-rubric">Grading Rubric</a></li>
+  <li><a href="#7-ai-tool-usage">AI-Tool Usage</a></li>
+  <li><a href="#8-academic-honesty--licensing">Academic Honesty &amp; Licensing</a></li>
+  <li><a href="#9-submission--late-policy">Submission &amp; Late Policy</a></li>
+  <li><a href="#10-support--escalation">Support &amp; Escalation</a></li>
+</ol>
+
+<hr />
+
+<h2 id="1--scope--allowed-project-types">1 · Scope &amp; Allowed Project Types</h2>
+<h3 id="11-template-projects-default">1.1 Template Projects (default)</h3>
+<p>You may choose <strong>one</strong> of the official template repositories listed in the
+<em>global README</em> (e.g. <strong>SIMCLT</strong>, <strong>ECONGAMES</strong>).
+<em>Each template already contains a skeleton package, smoke tests, and CI pipeline.</em></p>
+
+<h3 id="12-solo-free-topic-project---optional">1.2 Solo “Free-Topic” Project   <em>(OPTIONAL)</em></h3>
+<ul>
+  <li>Work <strong>alone</strong> (no teammates).</li>
+  <li>Topic may be <em>anything in software engineering</em> <strong>except</strong> data-science centric
+work.
+<strong>Forbidden:</strong> projects whose <em>primary</em> goal is to ingest a dataset, fit/compare statistical or ML models, and produce metrics/plots.
+<strong>Allowed:</strong> simulations, games, CLI and GUI tools, solutions to computational challenges (although must be preapproved).</li>
+  <li>Must satisfy <strong>all</strong> rules below.</li>
+  <li><strong>One-paragraph proposal</strong> due <strong>Week 2 Friday 23:59 CET</strong> for Anna’s approval.</li>
+</ul>
+
+<hr />
+
+<h2 id="2--team-formation--registration">2 · Team Formation &amp; Registration</h2>
+<p>| Item | Requirement |
+|——|————-|
+| Team size | 3–4 students for template projects. Solo only for free-topic. |
+| Cross-discipline | Mixed econ/actuarial/finance/etc teams encouraged. |
+| Registration | Submit GitHub repository URL (or solo proposal) in Moodle <strong>“Projects → Team registration”</strong> by <strong>Week 2 Friday 23:59 CET</strong>. |
+| Lock-in | After deadline, teams &amp; project choices are frozen. No swaps (unless in a extreme situation, MUST be escalated with Anna) |</p>
+
+<hr />
+
+<h2 id="3--deliverables-all-mandatory--no-partial-credit">3 · Deliverables (all <strong>mandatory</strong> – no partial credit)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Item</th>
+      <th>Description</th>
+      <th>Deadline / Channel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1</strong></td>
+      <td><strong>GitHub repository</strong> tagged <strong><code class="language-plaintext highlighter-rouge">v1.0.0</code></strong></td>
+      <td>Complete, tested, installable package in the course organisation (private team repo).</td>
+      <td><strong>Week 10  ·  Fri 23:59 CET</strong></td>
+    </tr>
+    <tr>
+      <td><strong>2</strong></td>
+      <td><strong>Technical Report</strong> (PDF, 3–4 pages)</td>
+      <td>Architecture, maths/algorithms, validation, division-of-labour, AI-log summary.</td>
+      <td>E-mail to <strong>ta-projects@uni-xyz.ch</strong> (exact date announced Week 9)</td>
+    </tr>
+    <tr>
+      <td><strong>3</strong></td>
+      <td><strong>Live demo</strong> (15 min)</td>
+      <td>Run CLI/API, show tests passing, answer viva questions.</td>
+      <td>In-class, <strong>Week 11</strong> practical session</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="31--github-repository-requirements">3.1 · GitHub repository requirements</h3>
+
+<ul>
+  <li><strong>Code-freeze tag</strong>: annotated release <strong><code class="language-plaintext highlighter-rouge">v1.0.0</code></strong> on <code class="language-plaintext highlighter-rouge">main</code>; CI must be green at that commit.</li>
+  <li><strong>Installability</strong>: <code class="language-plaintext highlighter-rouge">pip install .[dev]</code> works on a fresh clone.</li>
+  <li><strong>Structure</strong>: keep scaffold layout <code class="language-plaintext highlighter-rouge">src/</code>, <code class="language-plaintext highlighter-rouge">tests/</code>, <code class="language-plaintext highlighter-rouge">pyproject.toml</code>, <code class="language-plaintext highlighter-rouge">README.md</code>, <code class="language-plaintext highlighter-rouge">LICENSE</code>.</li>
+  <li><strong>Quality gates</strong>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">pytest -q --cov=&lt;pkg&gt; --cov-fail-under=90</code> (≥ 90 % coverage)</li>
+      <li><code class="language-plaintext highlighter-rouge">mypy --strict src/</code> passes</li>
+      <li><code class="language-plaintext highlighter-rouge">flake8</code> passes</li>
+      <li>code formatted with <strong>black</strong></li>
+    </ul>
+  </li>
+  <li><strong>CI / CD workflow</strong> must: lint → type-check → test → build wheels → upload to <strong>TestPyPI</strong> on tag push.</li>
+  <li><strong>Docs</strong>: Sphinx HTML deployed via GitHub Pages and linked in README.</li>
+  <li><strong>Mandatory files</strong> at the tag
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">AI_LOG.md</code> (prompts kept)</li>
+      <li><code class="language-plaintext highlighter-rouge">NOTICE.md</code> (licenses / attributions)</li>
+      <li><code class="language-plaintext highlighter-rouge">sample_data/</code> (minimal dataset for smoke tests)</li>
+    </ul>
+  </li>
+  <li><strong>Licensing</strong>: only MIT / BSD / Apache dependencies.</li>
+  <li><strong>Branch protection</strong>: merging to <code class="language-plaintext highlighter-rouge">main</code> requires green CI.</li>
+</ul>
+
+<blockquote>
+  <p>The instructors will clone the repo at <code class="language-plaintext highlighter-rouge">v1.0.0</code>, run <code class="language-plaintext highlighter-rouge">pip install .[dev]</code>, <code class="language-plaintext highlighter-rouge">pytest</code>, and your CLI example.
+Any failure ⇒ <strong>0 pts for repository component</strong>.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="32--technical-report-pdf-4-6-pages">3.2 · Technical Report (PDF, 4-6 pages)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Section</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1 · Executive summary</strong></td>
+      <td>≈ 150 words: purpose, key results, target user.</td>
+    </tr>
+    <tr>
+      <td><strong>2 · System architecture</strong></td>
+      <td>Folder diagram + short narrative; list external libs.</td>
+    </tr>
+    <tr>
+      <td><strong>3 · Mathematics / algorithms</strong></td>
+      <td>Formulas with variable definitions; cite sources.</td>
+    </tr>
+    <tr>
+      <td><strong>4 · Validation &amp; testing</strong></td>
+      <td>Methods, one table of expected vs. actual results.</td>
+    </tr>
+    <tr>
+      <td><strong>5 · Division of labour</strong></td>
+      <td>Table mapping member → files/features/tests/docs.</td>
+    </tr>
+    <tr>
+      <td><strong>6 · AI-tool usage summary</strong></td>
+      <td>Aggregate stats; reflect on usefulness / risks (link to <code class="language-plaintext highlighter-rouge">AI_LOG.md</code>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Format:</em> single-column, 11 pt, ≤ 6 pages incl. figures.
+<em>Filename:</em> <code class="language-plaintext highlighter-rouge">teamname_project.pdf</code></p>
+
+<hr />
+
+<h3 id="33--live-demo-15-minutes">3.3 · Live demo (15 minutes)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Segment</th>
+      <th>Checklist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intro</td>
+      <td>Project goal, team members, show tag <code class="language-plaintext highlighter-rouge">v1.0.0</code>.</td>
+    </tr>
+    <tr>
+      <td>Run software</td>
+      <td><em>CLI/API on sample data</em> → show output.<br /><em><code class="language-plaintext highlighter-rouge">pytest -q</code></em> → coverage line visible.</td>
+    </tr>
+    <tr>
+      <td>Highlight</td>
+      <td>One feature / edge case / performance win.</td>
+    </tr>
+    <tr>
+      <td>Q &amp; A</td>
+      <td>Be ready to discuss code, maths, AI-generated parts.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Bring your own laptop; have wheel, sample data, and report <strong>offline</strong>.</li>
+  <li>Terminal font ≥ 16 pt; rehearse – over-runs will be cut.</li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p><strong>Remember:</strong> repository, report <strong>and</strong> demo are all compulsory.
+Miss one ⇒ automatic fail for the project component.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="4--technical-requirements">4 · Technical Requirements</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Hard Rule</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Language / Version</strong></td>
+      <td>Python &gt;= 3.10</td>
+    </tr>
+    <tr>
+      <td><strong>Repo layout</strong></td>
+      <td>Must follow scaffold: <code class="language-plaintext highlighter-rouge">src/</code>, <code class="language-plaintext highlighter-rouge">tests/</code>, <code class="language-plaintext highlighter-rouge">pyproject.toml</code>, <code class="language-plaintext highlighter-rouge">README.md</code>.<br /><strong>No Jupyter notebooks.</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Coding standards</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">black</code> formatting, <code class="language-plaintext highlighter-rouge">flake8</code> lint clean, <strong><code class="language-plaintext highlighter-rouge">mypy --strict</code></strong> passes.</td>
+    </tr>
+    <tr>
+      <td><strong>Testing</strong></td>
+      <td>Unit + property tests, <strong>≥ 80 % coverage by Week 6, ≥ 90 % final</strong> (<code class="language-plaintext highlighter-rouge">pytest --cov-fail-under</code>).</td>
+    </tr>
+    <tr>
+      <td><strong>CI / CD</strong></td>
+      <td>GitHub Actions workflow must run on every push &amp; PR.<br />Steps: install, tests, lint, type-check, coverage gate.<br />Build wheels and upload to <strong>TestPyPI</strong> on GitHub Release tags.</td>
+    </tr>
+    <tr>
+      <td><strong>Documentation</strong></td>
+      <td>• <code class="language-plaintext highlighter-rouge">README.md</code> quick-start<br />• Docstrings (NumPy style)<br />• Sphinx HTML docs deployed via GitHub Pages.</td>
+    </tr>
+    <tr>
+      <td><strong>Branch protection</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">main</code> branch must be protected: PR + green CI required to merge.</td>
+    </tr>
+    <tr>
+      <td><strong>Dependencies</strong></td>
+      <td>Pin in <code class="language-plaintext highlighter-rouge">pyproject.toml</code>; permissive licenses only (MIT/BSD/Apache).</td>
+    </tr>
+    <tr>
+      <td><strong>Sample data</strong></td>
+      <td>Provide minimal CSV/YAML in <code class="language-plaintext highlighter-rouge">sample_data/</code> so smoke tests run offline.</td>
+    </tr>
+    <tr>
+      <td><strong>AI Log</strong></td>
+      <td>Keep <code class="language-plaintext highlighter-rouge">AI_LOG.md</code> (see §7).</td>
+    </tr>
+    <tr>
+      <td><strong>Semantic Versioning</strong></td>
+      <td>Use tags <code class="language-plaintext highlighter-rouge">v0.x.y</code> during development, <code class="language-plaintext highlighter-rouge">v1.0.0</code> for final release.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="5--milestones--calendar">5 · Milestones &amp; Calendar</h2>
+
+<!-- | Week (2025) | Deliverable | Acceptance criteria |
+|-------------|-------------|---------------------| -->
+<!-- | **2 (Fri 21 Feb)** | Team registration / solo proposal | Repo exists, scaffold installs & smoke tests pass. |
+| **4 (Fri 7 Mar)** | Deterministic core | Template projects: maths validated vs. reference values.<br>Solo projects: core feature working, CI green. |
+| **6 (Fri 21 Mar)** | Stochastic / advanced engine | Coverage ≥ 80 %; CLI/API stable. |
+| **8 (Mon 31 Mar)** | **Code-freeze & tag `v1.0.0`** | CI green, Sphinx docs live, wheels on TestPyPI. |
+| **9 (Week of 7 Apr)** | Report + Live demo | PDF on LMS, 5 min presentation. | -->
+
+<p>TBA.</p>
+
+<p>Late submissions → see §9.</p>
+
+<hr />
+
+<h2 id="6--grading-rubric-100-pts">6 · Grading Rubric (100 pts)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Points</th>
+      <th>What we look for</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Code quality &amp; packaging</strong></td>
+      <td>35</td>
+      <td>Clean API, SOLID design, dependency management, semantic versioning.</td>
+    </tr>
+    <tr>
+      <td><strong>Statistical / algorithmic correctness</strong></td>
+      <td>25</td>
+      <td>Formulae implemented correctly; outputs validated; edge cases handled.</td>
+    </tr>
+    <tr>
+      <td><strong>Tests &amp; CI/CD</strong></td>
+      <td>20</td>
+      <td>Coverage target met; Actions workflow robust; property tests where appropriate.</td>
+    </tr>
+    <tr>
+      <td><strong>Usability &amp; documentation</strong></td>
+      <td>10</td>
+      <td>Clear README, helpful CLI <code class="language-plaintext highlighter-rouge">--help</code>, docstrings, example scripts.</td>
+    </tr>
+    <tr>
+      <td><strong>Report &amp; demo</strong></td>
+      <td>10</td>
+      <td>Concise write-up, division-of-labour table, confident demo &amp; Q&amp;A.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Points will be converted to a final grade out of 1 to 6. 0 is reserved for fraud.</p>
+
+<hr />
+
+<h2 id="7--ai-tool-usage">7 · AI Tool Usage</h2>
+
+<p>You are encouraged to experiment with AI-powered coding assistants, such as GitHub Copilot (free for students — visit https://github.com/education/students) , ChatGPT, Google Gemini, Tabnine, Claude Code, Cursor, Codeium, and so on. We will introduce and demo several of these in class.</p>
+
+<p>However, to keep the project review fair and transparent, follow <strong>either</strong> of the
+two simple options below — whichever feels most natural to your workflow:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>What to do</th>
+      <th>Where</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>A. Commit notes</strong> (recommended)</td>
+      <td>Mention “AI-assisted” in the commit message whenever you keep a non-trivial block of code suggested by an AI tool.</td>
+      <td>Git history</td>
+    </tr>
+    <tr>
+      <td><strong>B. Short log file</strong></td>
+      <td>Add a brief bullet list of major AI-generated snippets you decided to keep.</td>
+      <td><code class="language-plaintext highlighter-rouge">AI_LOG.md</code> (optional, plain list—no table required)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Things you <strong>do not</strong> need to track:</p>
+<ul>
+  <li>Every single prompt or conversation.</li>
+  <li>Code that you deleted or rewrote entirely.</li>
+</ul>
+
+<p>During the live demo, be ready to explain any AI-assisted code you kept—just as you would for code you wrote yourself.</p>
+
+<p>Your report should also contain an “AI tools usage” section in the Appendix, where you explain your workflow in plain words.</p>
+
+<p>Academic honesty rules from §8 still apply: the work must remain yours, and external code must respect licensing.</p>
+
+<hr />
+
+<h2 id="8--academic-honesty--licensing">8 · Academic Honesty &amp; Licensing</h2>
+
+<ul>
+  <li>All University plagiarism rules apply.</li>
+  <li>You may incorporate external code only if it is <strong>MIT, BSD, or Apache-2.0</strong> licensed and you credit the source in <code class="language-plaintext highlighter-rouge">NOTICE.md</code>.</li>
+  <li>GPL, AGPL, proprietary, or unlicensed code is <strong>forbidden</strong>.</li>
+  <li>Solo free-topic projects must be your own original work except for properly credited third-party libraries.</li>
+</ul>
+
+<hr />
+
+<h2 id="9--submission--late-policy">9 · Submission &amp; Late Policy</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Delay</th>
+      <th>Penalty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>≤ 24 h</td>
+      <td>-10 pts total score</td>
+    </tr>
+    <tr>
+      <td>24–48 h</td>
+      <td>-20 pts</td>
+    </tr>
+    <tr>
+      <td>&gt; 48 h</td>
+      <td>Project fails (0 pts)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>“Submission” means: tagged release <strong>AND</strong> report uploaded.</em>
+Demo slot missed without documented medical reason = fail.</p>
+
+<hr />
+
+<h2 id="10--support--escalation">10 · Support &amp; Escalation</h2>
+
+<ul>
+  <li><strong>Every live session</strong> will have time for a dedicated Q&amp;A.</li>
+  <li><em>I will not be live debugging your code with you</em>, but I will try my best to give you high-level advice and resources.</li>
+  <li><strong>Office hours</strong> — TBA (book time by email anna.smirnova@unil.ch at least 48 hours prior!)</li>
+  <li><strong>Issue tracker</strong> — each template repo has issues enabled; use for bug reports or clarifications.</li>
+  <li>Urgent private matters → email <strong>anna.smirnova@unil.ch</strong>.</li>
+</ul>
+
+<hr />
+
+<blockquote>
+  <p><strong>Remember:</strong> Your repository, report, and demo are <em>all</em> mandatory.
+Stay on schedule, keep CI green, and you’ll cruise through the assessment.</p>
+</blockquote>
+
+
+    </div>
+</article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Advanced Programming 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

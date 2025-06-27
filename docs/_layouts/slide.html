@@ -1,0 +1,140 @@
+---
+layout: default
+---
+
+<article class="slide-page">
+    <header class="slide-header">
+        <h1 class="slide-title">{{ page.title | escape }}</h1>
+        {% if page.week %}
+        <div class="slide-meta">
+            <span class="week-badge">Week {{ page.week }}</span>
+            {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+            {% endif %}
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="slide-content">
+        {{ content }}
+    </div>
+
+    {% if page.pdf_url %}
+    <div class="slide-downloads">
+        <h3>Downloads</h3>
+        <a href="{{ page.pdf_url }}" class="btn" target="_blank">📄 Download PDF</a>
+        {% if page.source_url %}
+        <a href="{{ page.source_url }}" class="btn btn-secondary" target="_blank">📝 View Source</a>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <nav class="slide-nav">
+        <div class="nav-links">
+            <a href="{{ '/slides/' | relative_url }}" class="btn btn-secondary">← Back to Slides</a>
+            {% if page.previous_slide %}
+            <a href="{{ page.previous_slide }}" class="btn btn-secondary">← Previous</a>
+            {% endif %}
+            {% if page.next_slide %}
+            <a href="{{ page.next_slide }}" class="btn">Next →</a>
+            {% endif %}
+        </div>
+    </nav>
+</article>
+
+<style>
+.slide-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.slide-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.slide-meta {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.week-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 1rem;
+}
+
+.slide-content {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    min-height: 500px;
+}
+
+.slide-content iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.slide-downloads {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.slide-downloads h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.slide-downloads .btn {
+    margin: 0 0.5rem;
+}
+
+.slide-nav {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .slide-title {
+        font-size: 1.5rem;
+    }
+    
+    .slide-content {
+        padding: 1rem;
+    }
+    
+    .slide-content iframe {
+        height: 400px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    .slide-downloads .btn {
+        margin: 0.25rem;
+        display: block;
+    }
+}
+</style>

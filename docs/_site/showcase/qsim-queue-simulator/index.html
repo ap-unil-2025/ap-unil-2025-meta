@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QSIM: Discrete-Event Queue Simulator | Advanced Programming 2025</title>
+    <meta name="description" content="Overview">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="canonical" href="http://localhost:4000/showcase/qsim-queue-simulator/">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>QSIM: Discrete-Event Queue Simulator | Advanced Programming 2025</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="QSIM: Discrete-Event Queue Simulator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
+<link rel="canonical" href="http://localhost:4000/showcase/qsim-queue-simulator/" />
+<meta property="og:url" content="http://localhost:4000/showcase/qsim-queue-simulator/" />
+<meta property="og:site_name" content="Advanced Programming 2025" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-27T11:33:27+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="QSIM: Discrete-Event Queue Simulator" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-27T11:33:27+02:00","datePublished":"2025-06-27T11:33:27+02:00","description":"Overview","headline":"QSIM: Discrete-Event Queue Simulator","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/showcase/qsim-queue-simulator/"},"url":"http://localhost:4000/showcase/qsim-queue-simulator/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <nav class="site-nav">
+                <a class="site-title" href="/">Advanced Programming 2025</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/lessons/">Lessons</a>
+                    <a href="/assignments/">Assignments</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="project">
+    <header class="project-header">
+        <h1 class="project-title">QSIM: Discrete-Event Queue Simulator</h1>
+        <div class="project-meta">
+            
+            <div class="team-info">
+                <strong>Team:</strong> 
+                
+                <span class="team-member">Nina Kowalski</span>, 
+                
+                <span class="team-member">James Thompson</span>, 
+                
+                <span class="team-member">Raj Patel</span>
+                
+            </div>
+            
+            
+            
+            <div class="course-year">
+                <strong>Course:</strong> 2024
+            </div>
+            
+            
+            
+            <div class="project-type">
+                <strong>Type:</strong> Final Project
+            </div>
+            
+        </div>
+        
+        
+        <div class="project-tags">
+            
+            <span class="tag">Simulation</span>
+            
+            <span class="tag">Operations Research</span>
+            
+            <span class="tag">Queueing Theory</span>
+            
+            <span class="tag">Performance Analysis</span>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="project-summary">
+        <h3>Project Summary</h3>
+        <p>A high-performance discrete-event simulation framework for analyzing queueing systems with support for complex topologies, custom arrival processes, and real-time visualization.</p>
+    </div>
+    
+
+    <div class="project-content">
+        <h2 id="overview">Overview</h2>
+
+<p>QSIM is a sophisticated discrete-event simulation framework designed for analyzing complex queueing systems. From simple M/M/1 queues to intricate network topologies, QSIM provides researchers and practitioners with powerful tools for performance analysis, capacity planning, and system optimization.</p>
+
+<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Modern systems require sophisticated queueing analysis:</p>
+<ul>
+  <li><strong>Service Centers</strong>: Call centers, hospitals, manufacturing systems</li>
+  <li><strong>Computer Networks</strong>: Traffic analysis, server farms, cloud computing</li>
+  <li><strong>Transportation</strong>: Airport security, traffic lights, public transit</li>
+  <li><strong>Financial Services</strong>: Bank branches, trading systems, payment processing</li>
+</ul>
+
+<p>Existing simulation tools are either too simplistic for complex scenarios or too expensive for academic and small business use.</p>
+
+<h2 id="solution-architecture">Solution Architecture</h2>
+
+<h3 id="core-simulation-engine">Core Simulation Engine</h3>
+<p>Built on discrete-event simulation principles with:</p>
+<ul>
+  <li><strong>Event-driven Architecture</strong>: Efficient event scheduling and processing</li>
+  <li><strong>Modular Components</strong>: Reusable queue, server, and network elements</li>
+  <li><strong>Extensible Framework</strong>: Plugin architecture for custom behaviors</li>
+  <li><strong>Statistical Collection</strong>: Comprehensive performance metrics</li>
+</ul>
+
+<h3 id="key-components">Key Components</h3>
+
+<ol>
+  <li><strong>Queue Models</strong>
+    <ul>
+      <li>Single-server and multi-server queues</li>
+      <li>Priority queues with preemption</li>
+      <li>Finite capacity with blocking/balking</li>
+      <li>Batch arrival and service processes</li>
+    </ul>
+  </li>
+  <li><strong>Network Topologies</strong>
+    <ul>
+      <li>Series and parallel queue networks</li>
+      <li>Closed and open queueing networks</li>
+      <li>Custom routing algorithms</li>
+      <li>Load balancing strategies</li>
+    </ul>
+  </li>
+  <li><strong>Arrival Processes</strong>
+    <ul>
+      <li>Poisson, Erlang, and Hyperexponential distributions</li>
+      <li>Non-stationary arrival rates</li>
+      <li>Batch arrivals and group processing</li>
+      <li>Correlated arrival streams</li>
+    </ul>
+  </li>
+  <li><strong>Service Mechanisms</strong>
+    <ul>
+      <li>Multiple service disciplines (FIFO, LIFO, Priority)</li>
+      <li>State-dependent service rates</li>
+      <li>Server breakdowns and repairs</li>
+      <li>Resource sharing and constraints</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<h3 id="discrete-event-engine">Discrete-Event Engine</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">simpy</span>
+<span class="kn">from</span> <span class="n">typing</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="k">class</span> <span class="nc">QueueingSystem</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">simpy</span><span class="p">.</span><span class="n">Environment</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">servers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">simpy</span><span class="p">.</span><span class="nc">Store</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">statistics</span> <span class="o">=</span> <span class="nc">StatisticsCollector</span><span class="p">()</span>
+        
+    <span class="k">def</span> <span class="nf">customer_arrival_process</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="n">simpy</span><span class="p">.</span><span class="n">Event</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="bp">None</span><span class="p">]:</span>
+        <span class="sh">"""</span><span class="s">Generate customer arrivals according to specified process.</span><span class="sh">"""</span>
+        <span class="n">customer_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="c1"># Sample inter-arrival time
+</span>            <span class="n">inter_arrival</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">arrival_distribution</span><span class="p">.</span><span class="nf">sample</span><span class="p">()</span>
+            <span class="k">yield</span> <span class="n">self</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="nf">timeout</span><span class="p">(</span><span class="n">inter_arrival</span><span class="p">)</span>
+            
+            <span class="c1"># Create new customer
+</span>            <span class="n">customer</span> <span class="o">=</span> <span class="nc">Customer</span><span class="p">(</span><span class="n">customer_id</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">now</span><span class="p">)</span>
+            <span class="n">customer_id</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+            <span class="c1"># Add to queue
+</span>            <span class="n">self</span><span class="p">.</span><span class="n">queue</span><span class="p">.</span><span class="nf">put</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
+            <span class="n">self</span><span class="p">.</span><span class="n">statistics</span><span class="p">.</span><span class="nf">record_arrival</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="server-process">Server Process</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Server</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="n">simpy</span><span class="p">.</span><span class="n">Environment</span><span class="p">,</span> <span class="n">service_rate</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">env</span> <span class="o">=</span> <span class="n">env</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">service_rate</span> <span class="o">=</span> <span class="n">service_rate</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">resource</span> <span class="o">=</span> <span class="n">simpy</span><span class="p">.</span><span class="nc">Resource</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">busy</span> <span class="o">=</span> <span class="bp">False</span>
+        
+    <span class="k">def</span> <span class="nf">serve_customers</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">queue</span><span class="p">:</span> <span class="n">simpy</span><span class="p">.</span><span class="n">Store</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">:</span>
+        <span class="sh">"""</span><span class="s">Continuous server process.</span><span class="sh">"""</span>
+        <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+            <span class="c1"># Wait for customer
+</span>            <span class="n">customer</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">queue</span><span class="p">.</span><span class="nf">get</span><span class="p">()</span>
+            
+            <span class="c1"># Request server resource
+</span>            <span class="k">with</span> <span class="n">self</span><span class="p">.</span><span class="n">resource</span><span class="p">.</span><span class="nf">request</span><span class="p">()</span> <span class="k">as</span> <span class="n">request</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">request</span>
+                
+                <span class="c1"># Record service start
+</span>                <span class="n">customer</span><span class="p">.</span><span class="n">service_start</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">now</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">busy</span> <span class="o">=</span> <span class="bp">True</span>
+                
+                <span class="c1"># Sample service time
+</span>                <span class="n">service_time</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="nf">exponential</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">self</span><span class="p">.</span><span class="n">service_rate</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">self</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="nf">timeout</span><span class="p">(</span><span class="n">service_time</span><span class="p">)</span>
+                
+                <span class="c1"># Complete service
+</span>                <span class="n">customer</span><span class="p">.</span><span class="n">service_end</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">env</span><span class="p">.</span><span class="n">now</span>
+                <span class="n">self</span><span class="p">.</span><span class="n">busy</span> <span class="o">=</span> <span class="bp">False</span>
+                
+                <span class="c1"># Record statistics
+</span>                <span class="n">self</span><span class="p">.</span><span class="n">statistics</span><span class="p">.</span><span class="nf">record_departure</span><span class="p">(</span><span class="n">customer</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advanced-features">Advanced Features</h2>
+
+<h3 id="-network-simulation">🔄 Network Simulation</h3>
+<ul>
+  <li><strong>Complex Topologies</strong>: Build arbitrary queueing networks</li>
+  <li><strong>Routing Algorithms</strong>: Probabilistic, shortest queue, load balancing</li>
+  <li><strong>Feedback Loops</strong>: Customers returning to previous stations</li>
+  <li><strong>Blocking Networks</strong>: Finite capacity with blocking</li>
+</ul>
+
+<h3 id="-statistical-analysis">📊 Statistical Analysis</h3>
+<ul>
+  <li><strong>Performance Metrics</strong>: Response time, throughput, utilization</li>
+  <li><strong>Confidence Intervals</strong>: Steady-state and transient analysis</li>
+  <li><strong>Batch Means</strong>: Independent replications for statistical validity</li>
+  <li><strong>Variance Reduction</strong>: Antithetic variables, control variates</li>
+</ul>
+
+<h3 id="-optimization-tools">🎯 Optimization Tools</h3>
+<ul>
+  <li><strong>Sensitivity Analysis</strong>: Parameter sweep and optimization</li>
+  <li><strong>Capacity Planning</strong>: Resource allocation optimization</li>
+  <li><strong>Cost Models</strong>: Economic analysis of system configurations</li>
+  <li><strong>What-if Analysis</strong>: Scenario comparison tools</li>
+</ul>
+
+<h3 id="-real-time-visualization">📈 Real-time Visualization</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">RealTimeVisualizer</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">simulation</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">simulation</span> <span class="o">=</span> <span class="n">simulation</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="p">.</span><span class="nc">Dash</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="nf">setup_layout</span><span class="p">()</span>
+        
+    <span class="k">def</span> <span class="nf">update_metrics</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">Update dashboard with current simulation metrics.</span><span class="sh">"""</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="sh">'</span><span class="s">queue_length</span><span class="sh">'</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">simulation</span><span class="p">.</span><span class="nf">get_queue_length</span><span class="p">(),</span>
+            <span class="sh">'</span><span class="s">server_utilization</span><span class="sh">'</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">simulation</span><span class="p">.</span><span class="nf">get_utilization</span><span class="p">(),</span>
+            <span class="sh">'</span><span class="s">average_wait_time</span><span class="sh">'</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">simulation</span><span class="p">.</span><span class="nf">get_avg_wait_time</span><span class="p">(),</span>
+            <span class="sh">'</span><span class="s">throughput</span><span class="sh">'</span><span class="p">:</span> <span class="n">self</span><span class="p">.</span><span class="n">simulation</span><span class="p">.</span><span class="nf">get_throughput</span><span class="p">()</span>
+        <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="simulation-examples">Simulation Examples</h2>
+
+<h3 id="example-1-mm1-queue-analysis">Example 1: M/M/1 Queue Analysis</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set up basic M/M/1 queue
+</span><span class="n">env</span> <span class="o">=</span> <span class="n">simpy</span><span class="p">.</span><span class="nc">Environment</span><span class="p">()</span>
+<span class="n">queue_system</span> <span class="o">=</span> <span class="nc">QueueingSystem</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+
+<span class="c1"># Configure parameters
+</span><span class="n">arrival_rate</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="c1"># customers per minute
+</span><span class="n">service_rate</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># customers per minute
+</span>
+<span class="c1"># Run simulation
+</span><span class="n">queue_system</span><span class="p">.</span><span class="nf">configure</span><span class="p">(</span>
+    <span class="n">arrival_process</span><span class="o">=</span><span class="nc">PoissonProcess</span><span class="p">(</span><span class="n">arrival_rate</span><span class="p">),</span>
+    <span class="n">service_process</span><span class="o">=</span><span class="nc">ExponentialService</span><span class="p">(</span><span class="n">service_rate</span><span class="p">),</span>
+    <span class="n">servers</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># Execute simulation
+</span><span class="n">env</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">until</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># Run for 1000 time units
+</span>
+<span class="c1"># Analyze results
+</span><span class="n">results</span> <span class="o">=</span> <span class="n">queue_system</span><span class="p">.</span><span class="nf">get_statistics</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Average queue length: </span><span class="si">{</span><span class="n">results</span><span class="p">.</span><span class="n">avg_queue_length</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Average wait time: </span><span class="si">{</span><span class="n">results</span><span class="p">.</span><span class="n">avg_wait_time</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Server utilization: </span><span class="si">{</span><span class="n">results</span><span class="p">.</span><span class="n">server_utilization</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="example-2-network-of-queues">Example 2: Network of Queues</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Create network topology
+</span><span class="n">network</span> <span class="o">=</span> <span class="nc">QueueNetwork</span><span class="p">()</span>
+
+<span class="c1"># Add stations
+</span><span class="n">reception</span> <span class="o">=</span> <span class="n">network</span><span class="p">.</span><span class="nf">add_station</span><span class="p">(</span><span class="sh">"</span><span class="s">Reception</span><span class="sh">"</span><span class="p">,</span> <span class="n">servers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">service_rate</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="n">triage</span> <span class="o">=</span> <span class="n">network</span><span class="p">.</span><span class="nf">add_station</span><span class="p">(</span><span class="sh">"</span><span class="s">Triage</span><span class="sh">"</span><span class="p">,</span> <span class="n">servers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">service_rate</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">treatment</span> <span class="o">=</span> <span class="n">network</span><span class="p">.</span><span class="nf">add_station</span><span class="p">(</span><span class="sh">"</span><span class="s">Treatment</span><span class="sh">"</span><span class="p">,</span> <span class="n">servers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">service_rate</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+
+<span class="c1"># Define routing
+</span><span class="n">network</span><span class="p">.</span><span class="nf">add_route</span><span class="p">(</span><span class="n">reception</span><span class="p">,</span> <span class="n">triage</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">network</span><span class="p">.</span><span class="nf">add_route</span><span class="p">(</span><span class="n">triage</span><span class="p">,</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">network</span><span class="p">.</span><span class="nf">add_route</span><span class="p">(</span><span class="n">triage</span><span class="p">,</span> <span class="sh">"</span><span class="s">EXIT</span><span class="sh">"</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">network</span><span class="p">.</span><span class="nf">add_route</span><span class="p">(</span><span class="n">treatment</span><span class="p">,</span> <span class="sh">"</span><span class="s">EXIT</span><span class="sh">"</span><span class="p">,</span> <span class="n">probability</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+
+<span class="c1"># Configure arrivals
+</span><span class="n">network</span><span class="p">.</span><span class="nf">set_arrival_process</span><span class="p">(</span>
+    <span class="n">station</span><span class="o">=</span><span class="n">reception</span><span class="p">,</span>
+    <span class="n">process</span><span class="o">=</span><span class="nc">PoissonProcess</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Run simulation
+</span><span class="n">results</span> <span class="o">=</span> <span class="n">network</span><span class="p">.</span><span class="nf">simulate</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">8</span><span class="o">*</span><span class="mi">60</span><span class="p">)</span>  <span class="c1"># 8-hour simulation
+</span></code></pre></div></div>
+
+<h2 id="performance-and-scalability">Performance and Scalability</h2>
+
+<h3 id="optimization-techniques">Optimization Techniques</h3>
+<ul>
+  <li><strong>Event List Management</strong>: Efficient priority queue implementation</li>
+  <li><strong>Memory Management</strong>: Object pooling for high-throughput simulations</li>
+  <li><strong>Parallel Execution</strong>: Multi-core support for independent replications</li>
+  <li><strong>Incremental Statistics</strong>: Online algorithms for metric calculation</li>
+</ul>
+
+<h3 id="benchmarks">Benchmarks</h3>
+<ul>
+  <li><strong>Simulation Speed</strong>: 1M events processed in &lt;30 seconds</li>
+  <li><strong>Memory Usage</strong>: &lt;100MB for 10K concurrent entities</li>
+  <li><strong>Accuracy</strong>: 99.9% agreement with analytical solutions where available</li>
+  <li><strong>Scalability</strong>: Networks with 1000+ nodes supported</li>
+</ul>
+
+<h2 id="validation-and-verification">Validation and Verification</h2>
+
+<h3 id="analytical-validation">Analytical Validation</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ValidationSuite</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">test_mm1_theoretical</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="sh">"""</span><span class="s">Validate M/M/1 results against theoretical values.</span><span class="sh">"""</span>
+        <span class="n">rho</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">arrival_rate</span> <span class="o">/</span> <span class="n">self</span><span class="p">.</span><span class="n">service_rate</span>
+        
+        <span class="c1"># Theoretical values
+</span>        <span class="n">theoretical_utilization</span> <span class="o">=</span> <span class="n">rho</span>
+        <span class="n">theoretical_avg_queue</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">)</span>
+        <span class="n">theoretical_avg_wait</span> <span class="o">=</span> <span class="n">rho</span> <span class="o">/</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">service_rate</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rho</span><span class="p">))</span>
+        
+        <span class="c1"># Simulation results
+</span>        <span class="n">sim_results</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">run_mm1_simulation</span><span class="p">()</span>
+        
+        <span class="c1"># Statistical tests
+</span>        <span class="k">assert</span> <span class="nf">abs</span><span class="p">(</span><span class="n">sim_results</span><span class="p">.</span><span class="n">utilization</span> <span class="o">-</span> <span class="n">theoretical_utilization</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.05</span>
+        <span class="k">assert</span> <span class="nf">abs</span><span class="p">(</span><span class="n">sim_results</span><span class="p">.</span><span class="n">avg_queue</span> <span class="o">-</span> <span class="n">theoretical_avg_queue</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span>
+        <span class="k">assert</span> <span class="nf">abs</span><span class="p">(</span><span class="n">sim_results</span><span class="p">.</span><span class="n">avg_wait</span> <span class="o">-</span> <span class="n">theoretical_avg_wait</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span>
+</code></pre></div></div>
+
+<h3 id="statistical-testing">Statistical Testing</h3>
+<ul>
+  <li><strong>Steady-state Detection</strong>: Automatic warm-up period identification</li>
+  <li><strong>Confidence Intervals</strong>: Student-t based confidence bounds</li>
+  <li><strong>Goodness-of-fit</strong>: Chi-square tests for distribution assumptions</li>
+  <li><strong>Independence Tests</strong>: Autocorrelation analysis of outputs</li>
+</ul>
+
+<h2 id="user-interface-and-experience">User Interface and Experience</h2>
+
+<h3 id="command-line-interface">Command-Line Interface</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run simple M/M/1 simulation</span>
+qsim run <span class="nt">--model</span> mm1 <span class="nt">--arrival-rate</span> 0.8 <span class="nt">--service-rate</span> 1.0 <span class="nt">--duration</span> 1000
+
+<span class="c"># Network simulation from configuration file</span>
+qsim run <span class="nt">--config</span> hospital_network.yaml <span class="nt">--replications</span> 10
+
+<span class="c"># Parameter sweep</span>
+qsim sweep <span class="nt">--model</span> mm1 <span class="nt">--param</span> arrival_rate <span class="nt">--range</span> 0.1:1.0:0.1 <span class="nt">--metric</span> utilization
+</code></pre></div></div>
+
+<h3 id="web-dashboard">Web Dashboard</h3>
+<ul>
+  <li><strong>Real-time Monitoring</strong>: Live simulation progress and metrics</li>
+  <li><strong>Interactive Controls</strong>: Pause, restart, parameter adjustment</li>
+  <li><strong>Visualization</strong>: Queue length plots, utilization charts</li>
+  <li><strong>Export Options</strong>: CSV, JSON, PDF reports</li>
+</ul>
+
+<h2 id="industry-applications">Industry Applications</h2>
+
+<h3 id="healthcare-systems">Healthcare Systems</h3>
+<ul>
+  <li><strong>Emergency Department</strong>: Patient flow optimization</li>
+  <li><strong>Operating Room Scheduling</strong>: Resource allocation</li>
+  <li><strong>Pharmacy Operations</strong>: Prescription processing</li>
+  <li><strong>Appointment Systems</strong>: Scheduling optimization</li>
+</ul>
+
+<h3 id="manufacturing">Manufacturing</h3>
+<ul>
+  <li><strong>Production Lines</strong>: Bottleneck identification</li>
+  <li><strong>Quality Control</strong>: Inspection station analysis</li>
+  <li><strong>Inventory Management</strong>: Replenishment policies</li>
+  <li><strong>Maintenance Planning</strong>: Preventive maintenance scheduling</li>
+</ul>
+
+<h3 id="service-industries">Service Industries</h3>
+<ul>
+  <li><strong>Call Centers</strong>: Staffing optimization</li>
+  <li><strong>Retail Checkout</strong>: Queue configuration</li>
+  <li><strong>Banking</strong>: Teller and ATM analysis</li>
+  <li><strong>Transportation</strong>: Terminal and hub operations</li>
+</ul>
+
+<h2 id="team-collaboration-and-development">Team Collaboration and Development</h2>
+
+<h3 id="agile-development-process">Agile Development Process</h3>
+<ul>
+  <li><strong>Sprint Planning</strong>: 2-week iterations with clear deliverables</li>
+  <li><strong>Code Reviews</strong>: Mandatory peer review for all changes</li>
+  <li><strong>Testing Strategy</strong>: Test-driven development with 95% coverage</li>
+  <li><strong>Documentation</strong>: Comprehensive API and user documentation</li>
+</ul>
+
+<h3 id="role-distribution">Role Distribution</h3>
+<ul>
+  <li><strong>Nina</strong>: Core simulation engine and statistical analysis</li>
+  <li><strong>James</strong>: Network topology and routing algorithms</li>
+  <li><strong>Raj</strong>: Visualization dashboard and user interface</li>
+</ul>
+
+<h3 id="technical-standards">Technical Standards</h3>
+<ul>
+  <li><strong>Code Quality</strong>: Black formatting, flake8 linting, mypy typing</li>
+  <li><strong>Testing</strong>: Pytest with property-based testing using Hypothesis</li>
+  <li><strong>Documentation</strong>: Sphinx with mathematical notation support</li>
+  <li><strong>CI/CD</strong>: GitHub Actions with automated testing and deployment</li>
+</ul>
+
+<h2 id="academic-and-research-impact">Academic and Research Impact</h2>
+
+<h3 id="educational-value">Educational Value</h3>
+<ul>
+  <li><strong>Teaching Tool</strong>: Used in Operations Research courses</li>
+  <li><strong>Research Platform</strong>: Foundation for advanced queueing research</li>
+  <li><strong>Case Studies</strong>: Real-world applications in multiple domains</li>
+  <li><strong>Open Source</strong>: Available for academic and commercial use</li>
+</ul>
+
+<h3 id="research-applications">Research Applications</h3>
+<ul>
+  <li><strong>Performance Analysis</strong>: Comparison of queueing disciplines</li>
+  <li><strong>System Design</strong>: Optimal resource allocation studies</li>
+  <li><strong>Stochastic Modeling</strong>: Advanced arrival and service processes</li>
+  <li><strong>Network Theory</strong>: Large-scale queueing network analysis</li>
+</ul>
+
+<h2 id="future-development">Future Development</h2>
+
+<h3 id="planned-enhancements">Planned Enhancements</h3>
+<ol>
+  <li><strong>Machine Learning</strong>: AI-driven parameter optimization</li>
+  <li><strong>Real-time Integration</strong>: Live data feeds from operational systems</li>
+  <li><strong>Advanced Visualization</strong>: 3D network topology displays</li>
+  <li><strong>Cloud Deployment</strong>: Scalable simulation in cloud environments</li>
+</ol>
+
+<h3 id="research-directions">Research Directions</h3>
+<ul>
+  <li><strong>Quantum Queueing</strong>: Extension to quantum computing scenarios</li>
+  <li><strong>Social Networks</strong>: Human behavior modeling in queues</li>
+  <li><strong>IoT Integration</strong>: Internet of Things device simulation</li>
+  <li><strong>Blockchain</strong>: Distributed consensus mechanism analysis</li>
+</ul>
+
+<hr />
+
+<p><em>QSIM demonstrates the application of advanced simulation techniques to solve real-world operational challenges, combining theoretical rigor with practical software engineering.</em></p>
+
+    </div>
+
+    
+    <div class="project-technologies">
+        <h3>Technologies Used</h3>
+        <div class="tech-tags">
+            
+            <span class="tech-tag">Python 3.10</span>
+            
+            <span class="tech-tag">SimPy</span>
+            
+            <span class="tech-tag">NumPy</span>
+            
+            <span class="tech-tag">Matplotlib</span>
+            
+            <span class="tech-tag">Dash</span>
+            
+            <span class="tech-tag">NetworkX</span>
+            
+            <span class="tech-tag">Asyncio</span>
+            
+        </div>
+    </div>
+    
+
+    
+    <div class="project-links">
+        <h3>Project Links</h3>
+        <div class="link-buttons">
+            
+            <a href="https://github.com/ninakowalski/qsim-simulator" class="btn" target="_blank">
+                💻 View Code <span class="external-icon">↗</span>
+            </a>
+            
+            
+            <a href="https://qsim-dashboard.herokuapp.com" class="btn btn-secondary" target="_blank">
+                🚀 Live Demo <span class="external-icon">↗</span>
+            </a>
+            
+            
+            <a href="https://ninakowalski.github.io/qsim-simulator" class="btn btn-secondary" target="_blank">
+                📚 Documentation <span class="external-icon">↗</span>
+            </a>
+            
+        </div>
+    </div>
+    
+
+    
+
+    <nav class="project-nav">
+        <a href="/projects/" class="btn btn-secondary">← Back to Projects</a>
+    </nav>
+</article>
+
+<style>
+.project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-member {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.project-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-summary {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.project-summary h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.project-summary p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.project-technologies {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-technologies h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.project-links {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-links h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.external-icon {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 0.25rem;
+}
+
+.project-achievements {
+    background-color: #fef3cd;
+    border: 1px solid #fdd835;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-achievements h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #b8860b;
+}
+
+.project-achievements ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.project-achievements li {
+    margin-bottom: 0.5rem;
+    color: #8b6914;
+}
+
+.project-nav {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2rem;
+    }
+    
+    .project-meta {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .link-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+}
+</style>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Advanced Programming 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

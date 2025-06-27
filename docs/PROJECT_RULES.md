@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Final Project Rules"
+subtitle: "Complete rulebook for Advanced Programming Spring 2025"
+---
+
 # FINAL-PROJECT RULEBOOK
 MSc Advanced Programming · Spring 2025 UNIL
 

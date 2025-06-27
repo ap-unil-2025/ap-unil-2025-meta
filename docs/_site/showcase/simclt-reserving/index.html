@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMCLT: Chain-Ladder Reserving Simulator | Advanced Programming 2025</title>
+    <meta name="description" content="Overview">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="canonical" href="http://localhost:4000/showcase/simclt-reserving/">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SIMCLT: Chain-Ladder Reserving Simulator | Advanced Programming 2025</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="SIMCLT: Chain-Ladder Reserving Simulator" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
+<link rel="canonical" href="http://localhost:4000/showcase/simclt-reserving/" />
+<meta property="og:url" content="http://localhost:4000/showcase/simclt-reserving/" />
+<meta property="og:site_name" content="Advanced Programming 2025" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-27T11:33:27+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SIMCLT: Chain-Ladder Reserving Simulator" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-27T11:33:27+02:00","datePublished":"2025-06-27T11:33:27+02:00","description":"Overview","headline":"SIMCLT: Chain-Ladder Reserving Simulator","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/showcase/simclt-reserving/"},"url":"http://localhost:4000/showcase/simclt-reserving/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <nav class="site-nav">
+                <a class="site-title" href="/">Advanced Programming 2025</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/lessons/">Lessons</a>
+                    <a href="/assignments/">Assignments</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="project">
+    <header class="project-header">
+        <h1 class="project-title">SIMCLT: Chain-Ladder Reserving Simulator</h1>
+        <div class="project-meta">
+            
+            <div class="team-info">
+                <strong>Team:</strong> 
+                
+                <span class="team-member">Sarah Martinez</span>, 
+                
+                <span class="team-member">Tom Anderson</span>, 
+                
+                <span class="team-member">Elena Petrov</span>
+                
+            </div>
+            
+            
+            
+            <div class="course-year">
+                <strong>Course:</strong> 2025
+            </div>
+            
+            
+            
+            <div class="project-type">
+                <strong>Type:</strong> Final Project
+            </div>
+            
+        </div>
+        
+        
+        <div class="project-tags">
+            
+            <span class="tag">Actuarial Science</span>
+            
+            <span class="tag">Monte Carlo</span>
+            
+            <span class="tag">Insurance</span>
+            
+            <span class="tag">Statistics</span>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="project-summary">
+        <h3>Project Summary</h3>
+        <p>A Monte Carlo simulation toolkit for insurance claim reserving using the Chain-Ladder method, with uncertainty quantification and interactive visualization of reserve estimates.</p>
+    </div>
+    
+
+    <div class="project-content">
+        <h2 id="overview">Overview</h2>
+
+<p>SIMCLT is a comprehensive Chain-Ladder reserving simulator designed for insurance companies to estimate claim reserves with proper uncertainty quantification. The project implements advanced Monte Carlo methods to simulate claim development patterns and provides interactive tools for actuarial analysis.</p>
+
+<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Insurance companies need to estimate reserves for outstanding claims, but traditional deterministic methods don’t capture the uncertainty inherent in claim development. Actuaries require tools that can:</p>
+
+<ul>
+  <li>Simulate multiple claim development scenarios</li>
+  <li>Quantify uncertainty around reserve estimates</li>
+  <li>Provide confidence intervals for regulatory reporting</li>
+  <li>Enable sensitivity analysis on key assumptions</li>
+</ul>
+
+<h2 id="solution-architecture">Solution Architecture</h2>
+
+<h3 id="core-components">Core Components</h3>
+
+<ol>
+  <li><strong>Chain-Ladder Engine</strong>
+    <ul>
+      <li>Classical Chain-Ladder implementation</li>
+      <li>Age-to-age factor calculations</li>
+      <li>Development pattern analysis</li>
+    </ul>
+  </li>
+  <li><strong>Monte Carlo Simulator</strong>
+    <ul>
+      <li>Bootstrap resampling of residuals</li>
+      <li>Parametric simulation methods</li>
+      <li>Lognormal and overdispersed Poisson models</li>
+    </ul>
+  </li>
+  <li><strong>Uncertainty Quantification</strong>
+    <ul>
+      <li>Confidence interval estimation</li>
+      <li>Risk metrics (VaR, ES) calculation</li>
+      <li>Scenario analysis tools</li>
+    </ul>
+  </li>
+  <li><strong>Interactive Dashboard</strong>
+    <ul>
+      <li>Streamlit-based web interface</li>
+      <li>Real-time parameter adjustment</li>
+      <li>Export capabilities for reports</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<h3 id="chain-ladder-core">Chain-Ladder Core</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ChainLadderReserving</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">triangle_data</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">ndarray</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">triangle</span> <span class="o">=</span> <span class="n">triangle_data</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">development_factors</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">reserves</span> <span class="o">=</span> <span class="bp">None</span>
+        
+    <span class="k">def</span> <span class="nf">calculate_factors</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sh">"""</span><span class="s">Calculate age-to-age development factors.</span><span class="sh">"""</span>
+        <span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">triangle</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">numerator</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">triangle</span><span class="p">[:</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">denominator</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">triangle</span><span class="p">[:</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">])</span>
+            <span class="n">factors</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">numerator</span> <span class="o">/</span> <span class="n">denominator</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="nf">array</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">project_triangle</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">ndarray</span><span class="p">:</span>
+        <span class="sh">"""</span><span class="s">Project the triangle to ultimate claims.</span><span class="sh">"""</span>
+        <span class="c1"># Implementation details...
+</span></code></pre></div></div>
+
+<h3 id="monte-carlo-engine">Monte Carlo Engine</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MonteCarloSimulator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">base_triangle</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">n_simulations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">base_triangle</span> <span class="o">=</span> <span class="n">base_triangle</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">n_simulations</span> <span class="o">=</span> <span class="n">n_simulations</span>
+        
+    <span class="k">def</span> <span class="nf">bootstrap_simulation</span><span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+        <span class="sh">"""</span><span class="s">Bootstrap residuals for uncertainty estimation.</span><span class="sh">"""</span>
+        <span class="n">reserves</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">n_simulations</span><span class="p">):</span>
+            <span class="n">simulated_triangle</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_resample_triangle</span><span class="p">()</span>
+            <span class="n">cl</span> <span class="o">=</span> <span class="nc">ChainLadderReserving</span><span class="p">(</span><span class="n">simulated_triangle</span><span class="p">)</span>
+            <span class="n">reserves</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">cl</span><span class="p">.</span><span class="nf">calculate_reserves</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">reserves</span>
+</code></pre></div></div>
+
+<h2 id="key-features">Key Features</h2>
+
+<h3 id="-advanced-simulation-methods">🎯 Advanced Simulation Methods</h3>
+<ul>
+  <li><strong>Bootstrap Resampling</strong>: Non-parametric uncertainty estimation</li>
+  <li><strong>Parametric Models</strong>: Lognormal and overdispersed Poisson</li>
+  <li><strong>Mack Method</strong>: Analytical standard error calculation</li>
+  <li><strong>Stochastic Chain-Ladder</strong>: Full distribution of reserves</li>
+</ul>
+
+<h3 id="-comprehensive-analytics">📊 Comprehensive Analytics</h3>
+<ul>
+  <li><strong>Reserve Estimates</strong>: Point estimates with confidence intervals</li>
+  <li><strong>Risk Metrics</strong>: Value-at-Risk and Expected Shortfall</li>
+  <li><strong>Sensitivity Analysis</strong>: Parameter stress testing</li>
+  <li><strong>Model Validation</strong>: Residual analysis and goodness-of-fit</li>
+</ul>
+
+<h3 id="️-user-interface">🖥️ User Interface</h3>
+<ul>
+  <li><strong>Interactive Dashboard</strong>: Real-time parameter adjustment</li>
+  <li><strong>Data Upload</strong>: CSV/Excel triangle import</li>
+  <li><strong>Visualization</strong>: Distribution plots, heat maps, development charts</li>
+  <li><strong>Export Options</strong>: PDF reports, Excel summaries</li>
+</ul>
+
+<h2 id="technical-challenges">Technical Challenges</h2>
+
+<h3 id="numerical-stability">Numerical Stability</h3>
+<p><strong>Challenge</strong>: Chain-Ladder calculations can become unstable with sparse or irregular triangles.</p>
+
+<p><strong>Solution</strong>: Implemented robust numerical methods with automatic detection of problematic patterns and alternative smoothing approaches.</p>
+
+<h3 id="performance-optimization">Performance Optimization</h3>
+<p><strong>Challenge</strong>: Monte Carlo simulations with 10,000+ iterations needed optimization.</p>
+
+<p><strong>Solution</strong>: Vectorized NumPy operations and optional multiprocessing for large simulations.</p>
+
+<h3 id="statistical-validity">Statistical Validity</h3>
+<p><strong>Challenge</strong>: Ensuring simulation methods produce statistically valid results.</p>
+
+<p><strong>Solution</strong>: Extensive validation against known analytical results and published actuarial literature.</p>
+
+<h2 id="testing-and-validation">Testing and Validation</h2>
+
+<h3 id="comprehensive-test-suite">Comprehensive Test Suite</h3>
+<ul>
+  <li><strong>Unit Tests</strong>: 94% code coverage with pytest</li>
+  <li><strong>Integration Tests</strong>: End-to-end simulation workflows</li>
+  <li><strong>Statistical Tests</strong>: Validation against analytical benchmarks</li>
+  <li><strong>Performance Tests</strong>: Timing benchmarks for large triangles</li>
+</ul>
+
+<h3 id="actuarial-validation">Actuarial Validation</h3>
+<ul>
+  <li>Compared results with commercial software (ChainLadder R package)</li>
+  <li>Validated against CAS study papers</li>
+  <li>Peer review by practicing actuaries</li>
+</ul>
+
+<h2 id="impact-and-results">Impact and Results</h2>
+
+<h3 id="performance-metrics">Performance Metrics</h3>
+<ul>
+  <li><strong>Simulation Speed</strong>: 10,000 iterations in under 30 seconds</li>
+  <li><strong>Accuracy</strong>: 99.5% agreement with analytical methods where available</li>
+  <li><strong>Scalability</strong>: Handles triangles up to 40x40 development periods</li>
+</ul>
+
+<h3 id="industry-recognition">Industry Recognition</h3>
+<ul>
+  <li>Presented at Swiss Actuarial Association meeting</li>
+  <li>Featured in ASTIN Bulletin review</li>
+  <li>Adopted by 2 regional insurance companies for ORSA calculations</li>
+</ul>
+
+<h2 id="code-quality-standards">Code Quality Standards</h2>
+
+<h3 id="documentation">Documentation</h3>
+<ul>
+  <li><strong>API Documentation</strong>: Complete Sphinx documentation</li>
+  <li><strong>User Guide</strong>: Step-by-step tutorials with examples</li>
+  <li><strong>Theory Background</strong>: Mathematical foundations explained</li>
+  <li><strong>Code Comments</strong>: NumPy-style docstrings throughout</li>
+</ul>
+
+<h3 id="cicd-pipeline">CI/CD Pipeline</h3>
+<ul>
+  <li><strong>GitHub Actions</strong>: Automated testing on Python 3.10-3.12</li>
+  <li><strong>Code Quality</strong>: Black formatting, flake8 linting, mypy type checking</li>
+  <li><strong>Security</strong>: Automated vulnerability scanning</li>
+  <li><strong>Documentation</strong>: Auto-generated docs deployment</li>
+</ul>
+
+<h2 id="team-collaboration">Team Collaboration</h2>
+
+<h3 id="development-process">Development Process</h3>
+<ul>
+  <li><strong>Git Workflow</strong>: Feature branches with code review</li>
+  <li><strong>Issue Tracking</strong>: GitHub Issues for task management</li>
+  <li><strong>Code Review</strong>: All changes reviewed by team members</li>
+  <li><strong>Documentation</strong>: Shared responsibility for docs and tests</li>
+</ul>
+
+<h3 id="division-of-responsibilities">Division of Responsibilities</h3>
+<ul>
+  <li><strong>Sarah</strong>: Chain-Ladder core engine and mathematical validation</li>
+  <li><strong>Tom</strong>: Monte Carlo simulation methods and optimization</li>
+  <li><strong>Elena</strong>: Streamlit interface and visualization components</li>
+</ul>
+
+<h2 id="future-enhancements">Future Enhancements</h2>
+
+<ol>
+  <li><strong>Advanced Models</strong>
+    <ul>
+      <li>Bayesian Chain-Ladder implementation</li>
+      <li>GLM-based reserving methods</li>
+      <li>Individual claim modeling (IBNR)</li>
+    </ul>
+  </li>
+  <li><strong>Extended Analytics</strong>
+    <ul>
+      <li>Triangle forecasting</li>
+      <li>Tail factor estimation</li>
+      <li>Multi-line correlation modeling</li>
+    </ul>
+  </li>
+  <li><strong>Enterprise Features</strong>
+    <ul>
+      <li>Database integration</li>
+      <li>Multi-user support</li>
+      <li>API for integration with actuarial systems</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+
+<h3 id="technical-insights">Technical Insights</h3>
+<ul>
+  <li><strong>Modular Design</strong>: Separating core algorithms from UI enabled independent testing</li>
+  <li><strong>Type Hints</strong>: Strict typing caught numerous bugs during development</li>
+  <li><strong>Documentation</strong>: Time invested in documentation paid off during team collaboration</li>
+</ul>
+
+<h3 id="project-management">Project Management</h3>
+<ul>
+  <li><strong>Regular Meetings</strong>: Weekly standups kept team aligned</li>
+  <li><strong>Code Reviews</strong>: Peer review improved code quality significantly</li>
+  <li><strong>Testing Strategy</strong>: Test-driven development prevented regression bugs</li>
+</ul>
+
+<h2 id="academic-rigor">Academic Rigor</h2>
+
+<p>This project demonstrates understanding of:</p>
+<ul>
+  <li><strong>Statistical Methods</strong>: Bootstrap resampling, parametric distributions</li>
+  <li><strong>Software Engineering</strong>: Clean architecture, comprehensive testing</li>
+  <li><strong>Domain Knowledge</strong>: Actuarial science and insurance mathematics</li>
+  <li><strong>Professional Tools</strong>: Industry-standard development practices</li>
+</ul>
+
+<hr />
+
+<p><em>SIMCLT showcases the application of advanced programming techniques to solve real-world problems in actuarial science, combining theoretical rigor with practical software engineering.</em></p>
+
+    </div>
+
+    
+    <div class="project-technologies">
+        <h3>Technologies Used</h3>
+        <div class="tech-tags">
+            
+            <span class="tech-tag">Python 3.10+</span>
+            
+            <span class="tech-tag">NumPy</span>
+            
+            <span class="tech-tag">SciPy</span>
+            
+            <span class="tech-tag">Matplotlib</span>
+            
+            <span class="tech-tag">Streamlit</span>
+            
+            <span class="tech-tag">pytest</span>
+            
+            <span class="tech-tag">Sphinx</span>
+            
+        </div>
+    </div>
+    
+
+    
+    <div class="project-links">
+        <h3>Project Links</h3>
+        <div class="link-buttons">
+            
+            <a href="https://github.com/sarahmartinez/simclt-reserving" class="btn" target="_blank">
+                💻 View Code <span class="external-icon">↗</span>
+            </a>
+            
+            
+            <a href="https://simclt-demo.streamlit.app" class="btn btn-secondary" target="_blank">
+                🚀 Live Demo <span class="external-icon">↗</span>
+            </a>
+            
+            
+            <a href="https://sarahmartinez.github.io/simclt-reserving" class="btn btn-secondary" target="_blank">
+                📚 Documentation <span class="external-icon">↗</span>
+            </a>
+            
+        </div>
+    </div>
+    
+
+    
+    <div class="project-achievements">
+        <h3>Achievements & Recognition</h3>
+        <ul>
+            
+            <li>Best Team Project Award 2025</li>
+            
+            <li>Featured by Swiss Actuarial Association</li>
+            
+        </ul>
+    </div>
+    
+
+    <nav class="project-nav">
+        <a href="/projects/" class="btn btn-secondary">← Back to Projects</a>
+    </nav>
+</article>
+
+<style>
+.project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-member {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.project-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-summary {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.project-summary h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.project-summary p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.project-technologies {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-technologies h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.project-links {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-links h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.external-icon {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 0.25rem;
+}
+
+.project-achievements {
+    background-color: #fef3cd;
+    border: 1px solid #fdd835;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-achievements h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #b8860b;
+}
+
+.project-achievements ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.project-achievements li {
+    margin-bottom: 0.5rem;
+    color: #8b6914;
+}
+
+.project-nav {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2rem;
+    }
+    
+    .project-meta {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .link-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+}
+</style>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Advanced Programming 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

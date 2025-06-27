@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<article class="assignment">
+    <header class="assignment-header">
+        <h1 class="assignment-title">{{ page.title | escape }}</h1>
+        <div class="assignment-meta">
+            {% if page.due_date %}
+            <div class="due-date">
+                <strong>Due:</strong> {{ page.due_date | date: "%B %d, %Y at %I:%M %p" }}
+            </div>
+            {% endif %}
+            {% if page.points %}
+            <div class="points">
+                <strong>Points:</strong> {{ page.points }}
+            </div>
+            {% endif %}
+            {% if page.type %}
+            <div class="assignment-type">
+                <strong>Type:</strong> {{ page.type }}
+            </div>
+            {% endif %}
+        </div>
+    </header>
+
+    {% if page.instructions %}
+    <div class="assignment-instructions">
+        <h3>Instructions</h3>
+        {{ page.instructions | markdownify }}
+    </div>
+    {% endif %}
+
+    <div class="assignment-content">
+        {{ content }}
+    </div>
+
+    {% if page.rubric %}
+    <div class="assignment-rubric">
+        <h3>Grading Rubric</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Points</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in page.rubric %}
+                <tr>
+                    <td>{{ item.criteria }}</td>
+                    <td>{{ item.points }}</td>
+                    <td>{{ item.description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if page.submission %}
+    <div class="assignment-submission">
+        <h3>Submission Guidelines</h3>
+        {{ page.submission | markdownify }}
+    </div>
+    {% endif %}
+</article>

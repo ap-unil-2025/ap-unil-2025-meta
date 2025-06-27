@@ -1,0 +1,353 @@
+---
+layout: page
+title: Assignments
+subtitle: GitHub Classroom assignments and projects
+---
+
+<div class="assignments-page">
+    {% assign assignments = site.assignments | sort: 'assignment_number' %}
+    {% if assignments.size > 0 %}
+        <div class="assignments-list">
+            {% for assignment in assignments %}
+            <div class="assignment-card card">
+                <div class="card-header">
+                    <div class="assignment-title-row">
+                        <h3 class="card-title">
+                            <a href="{{ assignment.url | relative_url }}">{{ assignment.title | escape }}</a>
+                        </h3>
+                        <div class="assignment-status">
+                            {% assign now = 'now' | date: '%s' %}
+                            {% assign due = assignment.due_date | date: '%s' %}
+                            {% if assignment.status == 'coming_soon' %}
+                                <span class="status-badge status-coming-soon">Coming Soon</span>
+                            {% elsif due > now %}
+                                <span class="status-badge status-open">Open</span>
+                            {% else %}
+                                <span class="status-badge status-closed">Closed</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-badges">
+                        {% if assignment.difficulty %}
+                        <span class="difficulty-badge difficulty-{{ assignment.difficulty | downcase }}">{{ assignment.difficulty }}</span>
+                        {% endif %}
+                        {% if assignment.estimated_time %}
+                        <span class="time-badge">{{ assignment.estimated_time }}</span>
+                        {% endif %}
+                        {% if assignment.team_size %}
+                        <span class="team-badge">{{ assignment.team_size }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="assignment-meta">
+                    {% if assignment.due_date %}
+                    <div class="due-date">
+                        <strong>Due:</strong> {{ assignment.due_date | date: "%B %d, %Y at %I:%M %p" }}
+                    </div>
+                    {% endif %}
+                    {% if assignment.points %}
+                    <div class="points">
+                        <strong>Points:</strong> {{ assignment.points }}
+                    </div>
+                    {% endif %}
+                </div>
+
+                {% if assignment.excerpt %}
+                <p class="assignment-excerpt">{{ assignment.excerpt | strip_html | truncate: 180 }}</p>
+                {% endif %}
+
+                {% if assignment.topics %}
+                <div class="assignment-topics">
+                    <strong>Topics:</strong>
+                    {% for topic in assignment.topics %}
+                    <span class="topic-tag">{{ topic }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="card-actions">
+                    {% if assignment.status != 'coming_soon' %}
+                        {% if assignment.github_classroom_url %}
+                        <a href="{{ assignment.github_classroom_url }}" class="btn classroom-btn" target="_blank">
+                            📚 Accept Assignment
+                            <span class="external-icon">↗</span>
+                        </a>
+                        {% endif %}
+                        <a href="{{ assignment.url | relative_url }}" class="btn btn-secondary">View Details</a>
+                    {% else %}
+                        <span class="btn btn-disabled">Available Soon</span>
+                        <a href="{{ assignment.url | relative_url }}" class="btn btn-secondary">Preview</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h3>No assignments available yet</h3>
+            <p>Assignments will be posted here as they become available.</p>
+        </div>
+    {% endif %}
+
+    <div class="assignments-info">
+        <h2>Assignment Guidelines</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>📚 GitHub Classroom</h4>
+                <p>All assignments use GitHub Classroom for distribution and submission. Click "Accept Assignment" to get your personal repository.</p>
+            </div>
+            <div class="info-card">
+                <h4>⏰ Deadlines</h4>
+                <p>All assignments are due at 11:59 PM on the specified date. Late submissions may receive reduced credit.</p>
+            </div>
+            <div class="info-card">
+                <h4>🤝 Collaboration</h4>
+                <p>Check each assignment for collaboration policies. Some allow pair programming, others require individual work.</p>
+            </div>
+            <div class="info-card">
+                <h4>📝 Submission</h4>
+                <p>Submit by pushing your final code to your GitHub repository. No additional submission steps required.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.assignments-list {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.assignment-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.assignment-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    margin: 0;
+    flex: 1;
+}
+
+.card-title a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: var(--primary-color);
+}
+
+.assignment-status {
+    margin-left: 1rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.status-open {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.status-closed {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.status-coming-soon {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.assignment-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.difficulty-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.difficulty-beginner {
+    background-color: #10b981;
+    color: white;
+}
+
+.difficulty-intermediate {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.difficulty-advanced {
+    background-color: #ef4444;
+    color: white;
+}
+
+.time-badge, .team-badge {
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-color);
+}
+
+.assignment-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.due-date {
+    color: var(--text-primary);
+}
+
+.assignment-excerpt {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.assignment-topics {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.topic-tag {
+    display: inline-block;
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    border: 1px solid var(--border-color);
+}
+
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.classroom-btn {
+    background-color: #28a745;
+    color: white;
+    position: relative;
+}
+
+.classroom-btn:hover {
+    background-color: #218838;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-disabled {
+    background-color: var(--border-color);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    background-color: var(--border-color);
+    color: var(--text-muted);
+}
+
+.external-icon {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 0.25rem;
+}
+
+.assignments-info {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.assignments-info h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.info-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.info-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .assignment-title-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .assignment-status {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+    
+    .assignment-meta {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .assignment-badges {
+        justify-content: flex-start;
+    }
+}
+</style>

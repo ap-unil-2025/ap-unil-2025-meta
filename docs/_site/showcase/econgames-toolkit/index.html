@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ECONGAMES: Monte-Carlo Game-Theory Toolkit | Advanced Programming 2025</title>
+    <meta name="description" content="Overview">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="canonical" href="http://localhost:4000/showcase/econgames-toolkit/">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ECONGAMES: Monte-Carlo Game-Theory Toolkit | Advanced Programming 2025</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="ECONGAMES: Monte-Carlo Game-Theory Toolkit" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Overview" />
+<meta property="og:description" content="Overview" />
+<link rel="canonical" href="http://localhost:4000/showcase/econgames-toolkit/" />
+<meta property="og:url" content="http://localhost:4000/showcase/econgames-toolkit/" />
+<meta property="og:site_name" content="Advanced Programming 2025" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-27T11:33:27+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ECONGAMES: Monte-Carlo Game-Theory Toolkit" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-06-27T11:33:27+02:00","datePublished":"2025-06-27T11:33:27+02:00","description":"Overview","headline":"ECONGAMES: Monte-Carlo Game-Theory Toolkit","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/showcase/econgames-toolkit/"},"url":"http://localhost:4000/showcase/econgames-toolkit/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <nav class="site-nav">
+                <a class="site-title" href="/">Advanced Programming 2025</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/lessons/">Lessons</a>
+                    <a href="/assignments/">Assignments</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="project">
+    <header class="project-header">
+        <h1 class="project-title">ECONGAMES: Monte-Carlo Game-Theory Toolkit</h1>
+        <div class="project-meta">
+            
+            <div class="team-info">
+                <strong>Team:</strong> 
+                
+                <span class="team-member">Marco Rossi</span>, 
+                
+                <span class="team-member">Julie Dubois</span>, 
+                
+                <span class="team-member">Ahmed Hassan</span>, 
+                
+                <span class="team-member">Lisa Wang</span>
+                
+            </div>
+            
+            
+            
+            <div class="course-year">
+                <strong>Course:</strong> 2025
+            </div>
+            
+            
+            
+            <div class="project-type">
+                <strong>Type:</strong> Final Project
+            </div>
+            
+        </div>
+        
+        
+        <div class="project-tags">
+            
+            <span class="tag">Game Theory</span>
+            
+            <span class="tag">Economics</span>
+            
+            <span class="tag">Monte Carlo</span>
+            
+            <span class="tag">Network Analysis</span>
+            
+        </div>
+        
+    </header>
+
+    
+    <div class="project-summary">
+        <h3>Project Summary</h3>
+        <p>A comprehensive toolkit for simulating and analyzing game-theoretic scenarios using Monte Carlo methods, with focus on economic equilibria and strategic behavior analysis.</p>
+    </div>
+    
+
+    <div class="project-content">
+        <h2 id="overview">Overview</h2>
+
+<p>ECONGAMES is a sophisticated Monte Carlo simulation toolkit designed for analyzing game-theoretic scenarios in economics. The project provides researchers and students with powerful tools to simulate strategic interactions, find equilibria, and analyze the stability of economic systems under uncertainty.</p>
+
+<h2 id="problem-statement">Problem Statement</h2>
+
+<p>Economic researchers need computational tools to:</p>
+<ul>
+  <li>Simulate complex multi-player games with stochastic elements</li>
+  <li>Find and verify Nash equilibria in large strategy spaces</li>
+  <li>Analyze evolutionary stable strategies under uncertainty</li>
+  <li>Model network effects in economic interactions</li>
+</ul>
+
+<p>Traditional analytical methods become intractable for games with many players or complex strategy spaces, requiring computational approaches.</p>
+
+<h2 id="key-features">Key Features</h2>
+
+<h3 id="-game-types-supported">🎮 Game Types Supported</h3>
+<ul>
+  <li><strong>Normal Form Games</strong>: Classic matrix games with n players</li>
+  <li><strong>Extensive Form Games</strong>: Sequential games with perfect/imperfect information</li>
+  <li><strong>Evolutionary Games</strong>: Population dynamics and ESS analysis</li>
+  <li><strong>Network Games</strong>: Strategic interactions on graphs</li>
+</ul>
+
+<h3 id="-analysis-tools">🔬 Analysis Tools</h3>
+<ul>
+  <li><strong>Equilibrium Finding</strong>: Multiple algorithms for Nash equilibria</li>
+  <li><strong>Monte Carlo Simulation</strong>: Stochastic strategy evolution</li>
+  <li><strong>Stability Analysis</strong>: Perturbation testing of equilibria</li>
+  <li><strong>Convergence Analysis</strong>: Strategy learning dynamics</li>
+</ul>
+
+<h3 id="-visualization">📊 Visualization</h3>
+<ul>
+  <li><strong>Strategy Dynamics</strong>: Animated evolution of player strategies</li>
+  <li><strong>Payoff Landscapes</strong>: 3D visualization of game outcomes</li>
+  <li><strong>Network Visualization</strong>: Interactive graph-based games</li>
+  <li><strong>Statistical Plots</strong>: Distribution of outcomes and convergence</li>
+</ul>
+
+<h2 id="technical-implementation">Technical Implementation</h2>
+
+<h3 id="core-game-engine">Core Game Engine</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Game</span><span class="p">:</span>
+    <span class="sh">"""</span><span class="s">Base class for all game types.</span><span class="sh">"""</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">players</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Player</span><span class="p">],</span> <span class="n">payoff_functions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">players</span> <span class="o">=</span> <span class="n">players</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">payoff_functions</span> <span class="o">=</span> <span class="n">payoff_functions</span>
+        
+    <span class="k">def</span> <span class="nf">simulate_round</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">strategies</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Strategy</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+        <span class="sh">"""</span><span class="s">Simulate one round of the game.</span><span class="sh">"""</span>
+        <span class="n">payoffs</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">self</span><span class="p">.</span><span class="n">players</span><span class="p">:</span>
+            <span class="n">payoffs</span><span class="p">[</span><span class="n">player</span><span class="p">.</span><span class="nb">id</span><span class="p">]</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">calculate_payoff</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">strategies</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">payoffs</span>
+        
+    <span class="k">def</span> <span class="nf">find_nash_equilibria</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="sh">"</span><span class="s">iterative</span><span class="sh">"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">StrategyProfile</span><span class="p">]:</span>
+        <span class="sh">"""</span><span class="s">Find Nash equilibria using specified method.</span><span class="sh">"""</span>
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="sh">"</span><span class="s">iterative</span><span class="sh">"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">_iterative_best_response</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="sh">"</span><span class="s">evolutionary</span><span class="sh">"</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">_evolutionary_stable_strategy</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="monte-carlo-simulation-engine">Monte Carlo Simulation Engine</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MonteCarloSimulator</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">game</span><span class="p">:</span> <span class="n">Game</span><span class="p">,</span> <span class="n">n_simulations</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">):</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">game</span> <span class="o">=</span> <span class="n">game</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">n_simulations</span> <span class="o">=</span> <span class="n">n_simulations</span>
+        
+    <span class="k">def</span> <span class="nf">run_evolution_simulation</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> 
+                                <span class="n">initial_population</span><span class="p">:</span> <span class="n">Population</span><span class="p">,</span>
+                                <span class="n">mutation_rate</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.01</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SimulationResults</span><span class="p">:</span>
+        <span class="sh">"""</span><span class="s">Run evolutionary game simulation.</span><span class="sh">"""</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">population</span> <span class="o">=</span> <span class="n">initial_population</span><span class="p">.</span><span class="nf">copy</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">generation</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">n_simulations</span><span class="p">):</span>
+            <span class="c1"># Play games and collect payoffs
+</span>            <span class="n">payoffs</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_play_population_games</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+            
+            <span class="c1"># Update strategies based on success
+</span>            <span class="n">population</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">_update_population</span><span class="p">(</span><span class="n">population</span><span class="p">,</span> <span class="n">payoffs</span><span class="p">,</span> <span class="n">mutation_rate</span><span class="p">)</span>
+            
+            <span class="c1"># Record results
+</span>            <span class="n">results</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">_analyze_population</span><span class="p">(</span><span class="n">population</span><span class="p">))</span>
+            
+        <span class="k">return</span> <span class="nc">SimulationResults</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="project-highlights">Project Highlights</h2>
+
+<h3 id="-performance-optimizations">📈 Performance Optimizations</h3>
+<ul>
+  <li><strong>Vectorized Computations</strong>: NumPy-based matrix operations for large games</li>
+  <li><strong>Parallel Processing</strong>: Multiprocessing for independent simulations</li>
+  <li><strong>Caching</strong>: Memoization of expensive equilibrium calculations</li>
+  <li><strong>Sparse Representations</strong>: Efficient storage for large strategy spaces</li>
+</ul>
+
+<h3 id="-advanced-algorithms">🧠 Advanced Algorithms</h3>
+<ul>
+  <li><strong>Lemke-Howson Algorithm</strong>: Exact Nash equilibrium finding</li>
+  <li><strong>Evolutionary Stable Strategy</strong>: Population dynamics simulation</li>
+  <li><strong>Fictitious Play</strong>: Adaptive learning algorithms</li>
+  <li><strong>Quantal Response Equilibrium</strong>: Bounded rationality models</li>
+</ul>
+
+<h3 id="-api-design">🌐 API Design</h3>
+<ul>
+  <li><strong>RESTful API</strong>: FastAPI-based web service</li>
+  <li><strong>Interactive Documentation</strong>: Auto-generated Swagger UI</li>
+  <li><strong>Validation</strong>: Pydantic models for type safety</li>
+  <li><strong>Async Support</strong>: Concurrent simulation handling</li>
+</ul>
+
+<h2 id="use-cases-and-examples">Use Cases and Examples</h2>
+
+<h3 id="example-1-prisoners-dilemma-tournament">Example 1: Prisoner’s Dilemma Tournament</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Set up classic Prisoner's Dilemma
+</span><span class="n">pd_game</span> <span class="o">=</span> <span class="nc">NormalFormGame</span><span class="p">(</span>
+    <span class="n">players</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">],</span>
+    <span class="n">strategies</span><span class="o">=</span><span class="p">{</span><span class="sh">"</span><span class="s">Alice</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">Cooperate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Defect</span><span class="sh">"</span><span class="p">],</span> 
+               <span class="sh">"</span><span class="s">Bob</span><span class="sh">"</span><span class="p">:</span> <span class="p">[</span><span class="sh">"</span><span class="s">Cooperate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Defect</span><span class="sh">"</span><span class="p">]},</span>
+    <span class="n">payoffs</span><span class="o">=</span><span class="p">{</span>
+        <span class="p">(</span><span class="sh">"</span><span class="s">Cooperate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Cooperate</span><span class="sh">"</span><span class="p">):</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+        <span class="p">(</span><span class="sh">"</span><span class="s">Cooperate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Defect</span><span class="sh">"</span><span class="p">):</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+        <span class="p">(</span><span class="sh">"</span><span class="s">Defect</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Cooperate</span><span class="sh">"</span><span class="p">):</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">(</span><span class="sh">"</span><span class="s">Defect</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Defect</span><span class="sh">"</span><span class="p">):</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Run tournament with different strategies
+</span><span class="n">tournament</span> <span class="o">=</span> <span class="nc">Tournament</span><span class="p">(</span><span class="n">pd_game</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">tournament</span><span class="p">.</span><span class="nf">run_round_robin</span><span class="p">(</span><span class="n">strategies</span><span class="o">=</span><span class="p">[</span>
+    <span class="sh">"</span><span class="s">TitForTat</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AlwaysDefect</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">AlwaysCooperate</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Random</span><span class="sh">"</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="example-2-network-market-competition">Example 2: Network Market Competition</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Model competition on a social network
+</span><span class="n">network</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="nf">barabasi_albert_graph</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">market_game</span> <span class="o">=</span> <span class="nc">NetworkGame</span><span class="p">(</span>
+    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+    <span class="n">player_types</span><span class="o">=</span><span class="p">[</span><span class="sh">"</span><span class="s">Firm</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">Consumer</span><span class="sh">"</span><span class="p">],</span>
+    <span class="n">interaction_rules</span><span class="o">=</span><span class="n">local_competition_rules</span>
+<span class="p">)</span>
+
+<span class="c1"># Simulate market dynamics
+</span><span class="n">simulator</span> <span class="o">=</span> <span class="nc">MonteCarloSimulator</span><span class="p">(</span><span class="n">market_game</span><span class="p">,</span> <span class="n">n_simulations</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">simulator</span><span class="p">.</span><span class="nf">run_network_evolution</span><span class="p">(</span>
+    <span class="n">initial_strategies</span><span class="o">=</span><span class="n">random_strategies</span><span class="p">,</span>
+    <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="testing-and-validation">Testing and Validation</h2>
+
+<h3 id="mathematical-validation">Mathematical Validation</h3>
+<ul>
+  <li><strong>Known Equilibria</strong>: Verified against analytical solutions</li>
+  <li><strong>Convergence Properties</strong>: Tested convergence to known results</li>
+  <li><strong>Boundary Conditions</strong>: Edge case validation</li>
+  <li><strong>Numerical Precision</strong>: Floating-point stability testing</li>
+</ul>
+
+<h3 id="performance-testing">Performance Testing</h3>
+<ul>
+  <li><strong>Scalability Tests</strong>: Games with up to 1000 players</li>
+  <li><strong>Memory Usage</strong>: Profiling for large strategy spaces</li>
+  <li><strong>Execution Time</strong>: Benchmarking against theoretical complexity</li>
+  <li><strong>Parallel Efficiency</strong>: Speedup measurement for concurrent simulations</li>
+</ul>
+
+<h2 id="team-collaboration">Team Collaboration</h2>
+
+<h3 id="development-workflow">Development Workflow</h3>
+<ul>
+  <li><strong>Agile Methodology</strong>: 2-week sprints with retrospectives</li>
+  <li><strong>Feature Branches</strong>: Git flow with code review</li>
+  <li><strong>Continuous Integration</strong>: Automated testing and deployment</li>
+  <li><strong>Documentation</strong>: Sphinx with mathematical notation support</li>
+</ul>
+
+<h3 id="specialization-areas">Specialization Areas</h3>
+<ul>
+  <li><strong>Marco</strong>: Core game engine and equilibrium algorithms</li>
+  <li><strong>Julie</strong>: Monte Carlo simulation and statistical analysis</li>
+  <li><strong>Ahmed</strong>: Network games and graph algorithms</li>
+  <li><strong>Lisa</strong>: API development and user interface</li>
+</ul>
+
+<h2 id="academic-applications">Academic Applications</h2>
+
+<p>The toolkit has been used for:</p>
+<ul>
+  <li><strong>Course Projects</strong>: Game theory assignments in Economics courses</li>
+  <li><strong>Research Papers</strong>: Analysis of market competition dynamics</li>
+  <li><strong>Policy Analysis</strong>: Simulation of regulatory interventions</li>
+  <li><strong>Educational Tools</strong>: Interactive demonstrations for lectures</li>
+</ul>
+
+<h2 id="industry-relevance">Industry Relevance</h2>
+
+<h3 id="real-world-applications">Real-World Applications</h3>
+<ul>
+  <li><strong>Auction Design</strong>: Bidding strategy analysis</li>
+  <li><strong>Market Analysis</strong>: Competitive dynamics simulation</li>
+  <li><strong>Mechanism Design</strong>: Incentive structure optimization</li>
+  <li><strong>Behavioral Economics</strong>: Bounded rationality modeling</li>
+</ul>
+
+<h3 id="compliance-and-standards">Compliance and Standards</h3>
+<ul>
+  <li><strong>Reproducible Research</strong>: Deterministic random seeds</li>
+  <li><strong>Data Formats</strong>: Standard input/output formats</li>
+  <li><strong>Documentation</strong>: IEEE documentation standards</li>
+  <li><strong>Code Quality</strong>: PEP 8 compliance with type hints</li>
+</ul>
+
+<h2 id="future-development">Future Development</h2>
+
+<h3 id="planned-features">Planned Features</h3>
+<ol>
+  <li><strong>Machine Learning Integration</strong>: Deep reinforcement learning agents</li>
+  <li><strong>Bayesian Games</strong>: Incomplete information handling</li>
+  <li><strong>Mechanism Design Tools</strong>: Auction and voting system design</li>
+  <li><strong>Real-time Simulation</strong>: Live multi-player game interfaces</li>
+</ol>
+
+<h3 id="research-directions">Research Directions</h3>
+<ul>
+  <li><strong>Quantum Game Theory</strong>: Extension to quantum strategic interactions</li>
+  <li><strong>Behavioral Models</strong>: Integration of psychological factors</li>
+  <li><strong>Large-scale Simulations</strong>: Distributed computing for massive games</li>
+  <li><strong>AI Opponents</strong>: Integration with modern AI game-playing agents</li>
+</ul>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+
+<h3 id="technical-challenges">Technical Challenges</h3>
+<ul>
+  <li><strong>Numerical Stability</strong>: Floating-point precision in equilibrium calculations</li>
+  <li><strong>Scalability</strong>: Memory management for large games</li>
+  <li><strong>Algorithm Selection</strong>: Trade-offs between accuracy and performance</li>
+</ul>
+
+<h3 id="software-engineering">Software Engineering</h3>
+<ul>
+  <li><strong>API Design</strong>: Balancing flexibility with ease of use</li>
+  <li><strong>Testing Strategy</strong>: Validating stochastic algorithms</li>
+  <li><strong>Documentation</strong>: Explaining complex mathematical concepts clearly</li>
+</ul>
+
+<hr />
+
+<p><em>ECONGAMES demonstrates the intersection of economic theory, advanced algorithms, and software engineering, providing a robust foundation for computational game theory research.</em></p>
+
+    </div>
+
+    
+    <div class="project-technologies">
+        <h3>Technologies Used</h3>
+        <div class="tech-tags">
+            
+            <span class="tech-tag">Python 3.11</span>
+            
+            <span class="tech-tag">NumPy</span>
+            
+            <span class="tech-tag">NetworkX</span>
+            
+            <span class="tech-tag">Plotly</span>
+            
+            <span class="tech-tag">FastAPI</span>
+            
+            <span class="tech-tag">Pydantic</span>
+            
+            <span class="tech-tag">pytest</span>
+            
+        </div>
+    </div>
+    
+
+    
+    <div class="project-links">
+        <h3>Project Links</h3>
+        <div class="link-buttons">
+            
+            <a href="https://github.com/marcorossi/econgames-toolkit" class="btn" target="_blank">
+                💻 View Code <span class="external-icon">↗</span>
+            </a>
+            
+            
+            <a href="https://econgames-api.herokuapp.com" class="btn btn-secondary" target="_blank">
+                🚀 Live Demo <span class="external-icon">↗</span>
+            </a>
+            
+            
+            <a href="https://marcorossi.github.io/econgames-toolkit" class="btn btn-secondary" target="_blank">
+                📚 Documentation <span class="external-icon">↗</span>
+            </a>
+            
+        </div>
+    </div>
+    
+
+    
+
+    <nav class="project-nav">
+        <a href="/projects/" class="btn btn-secondary">← Back to Projects</a>
+    </nav>
+</article>
+
+<style>
+.project-header {
+    margin-bottom: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-member {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.project-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-summary {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.project-summary h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.project-summary p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.project-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.project-technologies {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-technologies h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.project-links {
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.project-links h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.link-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.external-icon {
+    font-size: 0.8em;
+    opacity: 0.8;
+    margin-left: 0.25rem;
+}
+
+.project-achievements {
+    background-color: #fef3cd;
+    border: 1px solid #fdd835;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.project-achievements h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #b8860b;
+}
+
+.project-achievements ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.project-achievements li {
+    margin-bottom: 0.5rem;
+    color: #8b6914;
+}
+
+.project-nav {
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2rem;
+    }
+    
+    .project-meta {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .link-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+}
+</style>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Advanced Programming 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

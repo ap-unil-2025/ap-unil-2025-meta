@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Code Like a Scientist: Essential Tools | Advanced Programming 2025</title>
+    <meta name="description" content="Code Like a Scientist: Essential Tools for Research Programming">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="canonical" href="http://localhost:4000/lessons/week01-essential-tools/">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Code Like a Scientist: Essential Tools | Advanced Programming 2025</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Code Like a Scientist: Essential Tools" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Code Like a Scientist: Essential Tools for Research Programming" />
+<meta property="og:description" content="Code Like a Scientist: Essential Tools for Research Programming" />
+<link rel="canonical" href="http://localhost:4000/lessons/week01-essential-tools/" />
+<meta property="og:url" content="http://localhost:4000/lessons/week01-essential-tools/" />
+<meta property="og:site_name" content="Advanced Programming 2025" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-01-27T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Code Like a Scientist: Essential Tools" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-27T00:00:00+01:00","datePublished":"2025-01-27T00:00:00+01:00","description":"Code Like a Scientist: Essential Tools for Research Programming","headline":"Code Like a Scientist: Essential Tools","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/lessons/week01-essential-tools/"},"url":"http://localhost:4000/lessons/week01-essential-tools/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <nav class="site-nav">
+                <a class="site-title" href="/">Advanced Programming 2025</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/lessons/">Lessons</a>
+                    <a href="/assignments/">Assignments</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="lesson">
+    <header class="lesson-header">
+        <h1 class="lesson-title">Code Like a Scientist: Essential Tools</h1>
+        <div class="lesson-meta">
+            
+            
+            <time datetime="2025-01-27T00:00:00+01:00">January 27, 2025</time>
+            
+            
+        </div>
+        
+    </header>
+
+    <div class="lesson-content">
+        <h1 id="code-like-a-scientist-essential-tools-for-research-programming">Code Like a Scientist: Essential Tools for Research Programming</h1>
+
+<p>This lesson introduces the fundamental tools every research programmer needs to work effectively and reproducibly.</p>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+
+<p>By the end of this lesson, you will:</p>
+
+<ul>
+  <li>Navigate the command line confidently</li>
+  <li>Use Git for version control of your research code</li>
+  <li>Set up a professional Python development environment</li>
+  <li>Understand research programming best practices</li>
+  <li>Create reproducible research workflows</li>
+</ul>
+
+<h2 id="essential-tools-overview">Essential Tools Overview</h2>
+
+<h3 id="1-command-line-interface-cli">1. Command Line Interface (CLI)</h3>
+<p>The command line is your gateway to powerful programming tools and efficient file management.</p>
+
+<p><strong>Key Commands:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Navigation</span>
+<span class="nb">ls</span>          <span class="c"># List files</span>
+<span class="nb">cd</span>          <span class="c"># Change directory</span>
+<span class="nb">pwd</span>         <span class="c"># Print working directory</span>
+
+<span class="c"># File operations</span>
+<span class="nb">mkdir</span>       <span class="c"># Create directory</span>
+<span class="nb">cp</span>          <span class="c"># Copy files</span>
+<span class="nb">mv</span>          <span class="c"># Move/rename files</span>
+<span class="nb">rm</span>          <span class="c"># Remove files</span>
+</code></pre></div></div>
+
+<h3 id="2-git-version-control">2. Git Version Control</h3>
+<p>Git tracks changes in your code and enables collaboration.</p>
+
+<p><strong>Basic Workflow:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Initialize repository</span>
+git init
+
+<span class="c"># Track changes</span>
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Descriptive message"</span>
+
+<span class="c"># Sync with remote</span>
+git push origin main
+git pull origin main
+</code></pre></div></div>
+
+<h3 id="3-python-environment-management">3. Python Environment Management</h3>
+<p>Professional Python development requires proper environment management.</p>
+
+<p><strong>Using UV (recommended):</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create virtual environment</span>
+uv venv .venv
+
+<span class="c"># Activate environment</span>
+<span class="nb">source</span> .venv/bin/activate  <span class="c"># macOS/Linux</span>
+<span class="c"># or</span>
+.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate     <span class="c"># Windows</span>
+
+<span class="c"># Install packages</span>
+uv pip <span class="nb">install </span>package-name
+</code></pre></div></div>
+
+<h2 id="hands-on-activities">Hands-on Activities</h2>
+
+<h3 id="activity-1-command-line-navigation">Activity 1: Command Line Navigation</h3>
+<ol>
+  <li>Open your terminal</li>
+  <li>Navigate to your Documents folder</li>
+  <li>Create a new directory called <code class="language-plaintext highlighter-rouge">research-projects</code></li>
+  <li>List the contents to verify creation</li>
+</ol>
+
+<h3 id="activity-2-first-git-repository">Activity 2: First Git Repository</h3>
+<ol>
+  <li>Initialize a Git repository in your project folder</li>
+  <li>Create a simple Python file</li>
+  <li>Add and commit your changes</li>
+  <li>Check the commit history</li>
+</ol>
+
+<h3 id="activity-3-python-environment-setup">Activity 3: Python Environment Setup</h3>
+<ol>
+  <li>Create a virtual environment for your project</li>
+  <li>Install commonly used research packages</li>
+  <li>Create a requirements.txt file</li>
+  <li>Test your environment</li>
+</ol>
+
+<h2 id="research-programming-workflow">Research Programming Workflow</h2>
+
+<ol>
+  <li><strong>Project Setup</strong>: Create organized directory structure</li>
+  <li><strong>Version Control</strong>: Initialize Git repository</li>
+  <li><strong>Environment</strong>: Set up isolated Python environment</li>
+  <li><strong>Development</strong>: Write code with proper documentation</li>
+  <li><strong>Testing</strong>: Validate your code works correctly</li>
+  <li><strong>Sharing</strong>: Push to GitHub for collaboration</li>
+</ol>
+
+<h2 id="code-examples">Code Examples</h2>
+
+<p>See the accompanying code examples for practical implementations:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">git-basics.py</code>: Common Git operations in Python</li>
+  <li><code class="language-plaintext highlighter-rouge">environment-setup.sh</code>: Automated environment setup script</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><strong>Slides</strong>: <a href="/slides/practice/week01_slides.html">Session 1 Slides</a></li>
+  <li><strong>Git Documentation</strong>: <a href="https://git-scm.com/doc">git-scm.com</a></li>
+  <li><strong>UV Documentation</strong>: <a href="https://docs.astral.sh/uv/">astral.sh/uv</a></li>
+  <li><strong>Command Line Cheat Sheet</strong>: Available in course materials</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p><strong>Common Issues:</strong></p>
+<ul>
+  <li>Git permission errors: Check SSH key setup</li>
+  <li>Python environment conflicts: Use virtual environments</li>
+  <li>Command not found: Verify software installation</li>
+</ul>
+
+<h2 id="assessment">Assessment</h2>
+
+<p>This lesson contributes to:</p>
+<ul>
+  <li>Assignment 1: Git Basics</li>
+  <li>Final project setup and version control</li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Continue with the next lesson to build on these foundational tools.</p>
+
+    </div>
+
+    
+
+    <nav class="lesson-nav">
+        
+        <a href="<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Advanced Programming | Advanced Programming 2025</title>
+    <meta name="description" content="Welcome to Advanced Programming @ UNIL 2025!">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="canonical" href="http://localhost:4000/lessons/week00-welcome/">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Welcome to Advanced Programming | Advanced Programming 2025</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Welcome to Advanced Programming" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Welcome to Advanced Programming @ UNIL 2025!" />
+<meta property="og:description" content="Welcome to Advanced Programming @ UNIL 2025!" />
+<link rel="canonical" href="http://localhost:4000/lessons/week00-welcome/" />
+<meta property="og:url" content="http://localhost:4000/lessons/week00-welcome/" />
+<meta property="og:site_name" content="Advanced Programming 2025" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-01-20T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Welcome to Advanced Programming" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-01-20T00:00:00+01:00","datePublished":"2025-01-20T00:00:00+01:00","description":"Welcome to Advanced Programming @ UNIL 2025!","headline":"Welcome to Advanced Programming","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/lessons/week00-welcome/"},"url":"http://localhost:4000/lessons/week00-welcome/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper">
+            <nav class="site-nav">
+                <a class="site-title" href="/">Advanced Programming 2025</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/lessons/">Lessons</a>
+                    <a href="/assignments/">Assignments</a>
+                    <a href="/resources/">Resources</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="wrapper">
+            <article class="lesson">
+    <header class="lesson-header">
+        <h1 class="lesson-title">Welcome to Advanced Programming</h1>
+        <div class="lesson-meta">
+            
+            
+            <time datetime="2025-01-20T00:00:00+01:00">January 20, 2025</time>
+            
+            
+        </div>
+        
+    </header>
+
+    <div class="lesson-content">
+        <h1 id="welcome-to-advanced-programming--unil-2025">Welcome to Advanced Programming @ UNIL 2025!</h1>
+
+<p>This introductory lesson covers the course structure, learning objectives, and sets up the foundation for research programming.</p>
+
+<h2 id="learning-objectives">Learning Objectives</h2>
+
+<p>By the end of this lesson, you will:</p>
+
+<ul>
+  <li>Understand the course structure and expectations</li>
+  <li>Know the key programming tools used in research</li>
+  <li>Have a clear overview of the final project requirements</li>
+  <li>Be familiar with the course website and resources</li>
+</ul>
+
+<h2 id="course-overview">Course Overview</h2>
+
+<p>Advanced Programming 2025 focuses on practical programming skills for research in economics, actuarial science, and finance.</p>
+
+<h3 id="key-topics">Key Topics</h3>
+<ul>
+  <li>Version control with Git and GitHub</li>
+  <li>Python development environment</li>
+  <li>Testing and code quality</li>
+  <li>Object-oriented programming</li>
+  <li>AI-assisted programming</li>
+  <li>Research project implementation</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><strong>Slides</strong>: <a href="/slides/practice/week00_slides.html">Session 0 Slides</a></li>
+  <li><strong>Course Website</strong>: <a href="https://ap-unil-2025.github.io/ap-unil-2025-meta/">ap-unil-2025.github.io</a></li>
+  <li><strong>GitHub Organization</strong>: <a href="https://github.com/ap-unil-2025">ap-unil-2025</a></li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<ol>
+  <li>Review the course website thoroughly</li>
+  <li>Set up your development environment</li>
+  <li>Join the GitHub organization</li>
+  <li>Start thinking about final project options</li>
+</ol>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Proceed to <a href="week01-essential-tools.html">Week 1: Essential Tools</a> to begin hands-on programming with research tools.</p>
+
+    </div>
+
+    
+
+    <nav class="lesson-nav">
+        
+        
+        <a href="# Code Like a Scientist: Essential Tools for Research Programming
+
+This lesson introduces the fundamental tools every research programmer needs to work effectively and reproducibly.
+
+## Learning Objectives
+
+By the end of this lesson, you will:
+
+- Navigate the command line confidently
+- Use Git for version control of your research code
+- Set up a professional Python development environment
+- Understand research programming best practices
+- Create reproducible research workflows
+
+## Essential Tools Overview
+
+### 1. Command Line Interface (CLI)
+The command line is your gateway to powerful programming tools and efficient file management.
+
+**Key Commands:**
+```bash
+# Navigation
+ls          # List files
+cd          # Change directory
+pwd         # Print working directory
+
+# File operations
+mkdir       # Create directory
+cp          # Copy files
+mv          # Move/rename files
+rm          # Remove files
+```
+
+### 2. Git Version Control
+Git tracks changes in your code and enables collaboration.
+
+**Basic Workflow:**
+```bash
+# Initialize repository
+git init
+
+# Track changes
+git add .
+git commit -m "Descriptive message"
+
+# Sync with remote
+git push origin main
+git pull origin main
+```
+
+### 3. Python Environment Management
+Professional Python development requires proper environment management.
+
+**Using UV (recommended):**
+```bash
+# Create virtual environment
+uv venv .venv
+
+# Activate environment
+source .venv/bin/activate  # macOS/Linux
+# or
+.venv\Scripts\activate     # Windows
+
+# Install packages
+uv pip install package-name
+```
+
+## Hands-on Activities
+
+### Activity 1: Command Line Navigation
+1. Open your terminal
+2. Navigate to your Documents folder
+3. Create a new directory called `research-projects`
+4. List the contents to verify creation
+
+### Activity 2: First Git Repository
+1. Initialize a Git repository in your project folder
+2. Create a simple Python file
+3. Add and commit your changes
+4. Check the commit history
+
+### Activity 3: Python Environment Setup
+1. Create a virtual environment for your project
+2. Install commonly used research packages
+3. Create a requirements.txt file
+4. Test your environment
+
+## Research Programming Workflow
+
+1. **Project Setup**: Create organized directory structure
+2. **Version Control**: Initialize Git repository
+3. **Environment**: Set up isolated Python environment
+4. **Development**: Write code with proper documentation
+5. **Testing**: Validate your code works correctly
+6. **Sharing**: Push to GitHub for collaboration
+
+## Code Examples
+
+See the accompanying code examples for practical implementations:
+- `git-basics.py`: Common Git operations in Python
+- `environment-setup.sh`: Automated environment setup script
+
+## Resources
+
+- **Slides**: [Session 1 Slides]({{ page.slides }})
+- **Git Documentation**: [git-scm.com](https://git-scm.com/doc)
+- **UV Documentation**: [astral.sh/uv](https://docs.astral.sh/uv/)
+- **Command Line Cheat Sheet**: Available in course materials
+
+## Troubleshooting
+
+**Common Issues:**
+- Git permission errors: Check SSH key setup
+- Python environment conflicts: Use virtual environments
+- Command not found: Verify software installation
+
+## Assessment
+
+This lesson contributes to:
+- Assignment 1: Git Basics
+- Final project setup and version control
+
+## Next Steps
+
+Continue with the next lesson to build on these foundational tools." class="btn">Next Lesson →</a>
+        
+    </nav>
+</article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Advanced Programming 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>" class="btn btn-secondary">← Previous Lesson</a>
+        
+        
+    </nav>
+</article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper">
+            <p>&copy; 2025 Advanced Programming 2025. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+---
+layout: page
+title: Lessons
+subtitle: Course materials and learning resources
+---
+
+<div class="lessons-page">
+    {% assign lessons = site.lessons | sort: 'lesson_number' %}
+    {% if lessons.size > 0 %}
+        <div class="lessons-grid">
+            {% for lesson in lessons %}
+            <div class="lesson-card card">
+                <div class="card-header">
+                    {% if lesson.lesson_number %}
+                    <span class="lesson-number">Lesson {{ lesson.lesson_number }}</span>
+                    {% endif %}
+                    <h3 class="card-title">
+                        <a href="{{ lesson.url | relative_url }}">{{ lesson.title | escape }}</a>
+                    </h3>
+                </div>
+                <div class="card-meta">
+                    {% if lesson.date %}
+                    <time datetime="{{ lesson.date | date_to_xmlschema }}">{{ lesson.date | date: "%B %d, %Y" }}</time>
+                    {% endif %}
+                    {% if lesson.duration %}
+                    <span class="duration">{{ lesson.duration }}</span>
+                    {% endif %}
+                </div>
+                {% if lesson.excerpt %}
+                <p class="card-excerpt">{{ lesson.excerpt | strip_html | truncate: 120 }}</p>
+                {% endif %}
+                {% if lesson.objectives %}
+                <div class="lesson-objectives-preview">
+                    <strong>Objectives:</strong>
+                    <ul>
+                        {% for objective in lesson.objectives limit:2 %}
+                        <li>{{ objective }}</li>
+                        {% endfor %}
+                        {% if lesson.objectives.size > 2 %}
+                        <li><em>and {{ lesson.objectives.size | minus: 2 }} more...</em></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endif %}
+                <a href="{{ lesson.url | relative_url }}" class="btn btn-secondary">View Lesson</a>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <h3>No lessons available yet</h3>
+            <p>Detailed lessons and materials will be posted here as the course progresses. For now, check out the weekly slides!</p>
+            <a href="{{ '/slides/' | relative_url }}" class="btn">View Slides</a>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.lesson-card {
+    height: fit-content;
+}
+
+.card-header {
+    margin-bottom: 1rem;
+}
+
+.lesson-number {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.card-title a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: var(--primary-color);
+}
+
+.card-meta {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.card-meta .duration {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--border-color);
+}
+
+.card-excerpt {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.lesson-objectives-preview {
+    background-color: var(--surface-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.lesson-objectives-preview ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.5rem;
+}
+
+.lesson-objectives-preview li {
+    margin-bottom: 0.25rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+}
+
+.empty-state .btn {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .lessons-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>

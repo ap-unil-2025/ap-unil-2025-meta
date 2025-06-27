@@ -1,0 +1,192 @@
+---
+layout: page
+title: Practice Session Slides
+subtitle: Weekly practice sessions with hands-on exercises
+---
+
+<div class="practice-slides-page">
+    <div class="slides-list">
+        {% comment %}Build list of week slides manually since they're static HTML files{% endcomment %}
+        {% assign slide_weeks = "00,01,02,03,04,05,06" | split: "," %}
+        {% for week in slide_weeks %}
+        <div class="slide-card card">
+            <div class="card-header">
+                <span class="week-badge">Week {{ week }}</span>
+                <h3 class="card-title">
+                    <a href="{{ 'slides/practice/week' | append: week | append: '_slides.html' | relative_url }}">Practice Session {{ week }}</a>
+                </h3>
+            </div>
+            <div class="card-meta">
+                <span class="slide-format">HTML Slides</span>
+                {% if week == "00" %}
+                <span class="slide-topic">Setup & Tools</span>
+                {% elsif week == "01" %}
+                <span class="slide-topic">Essential Programming Tools</span>
+                {% elsif week == "02" %}
+                <span class="slide-topic">Version Control</span>
+                {% elsif week == "03" %}
+                <span class="slide-topic">Development Environment</span>
+                {% elsif week == "04" %}
+                <span class="slide-topic">Testing & Debugging</span>
+                {% elsif week == "05" %}
+                <span class="slide-topic">Code Quality</span>
+                {% elsif week == "06" %}
+                <span class="slide-topic">Documentation</span>
+                {% endif %}
+            </div>
+            <p class="slide-description">Interactive practice session covering hands-on exercises and coding examples.</p>
+            <div class="card-actions">
+                <a href="{{ 'slides/practice/week' | append: week | append: '_slides.html' | relative_url }}" class="btn">View Slides</a>
+                {% comment %}
+                <!-- Add PDF links when available -->
+                <a href="{{ 'slides/practice/week' | append: week | append: '_slides.pdf' | relative_url }}" class="btn btn-secondary" target="_blank">📄 PDF</a>
+                {% endcomment %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="practice-info">
+        <h2>About Practice Sessions</h2>
+        <div class="info-content">
+            <p>Practice sessions are hands-on coding workshops designed to reinforce the concepts covered in lectures. Each session includes:</p>
+            <ul>
+                <li><strong>Interactive Examples:</strong> Step-by-step coding demonstrations</li>
+                <li><strong>Exercises:</strong> Practical problems to solve during the session</li>
+                <li><strong>Code Reviews:</strong> Discussion of best practices and common pitfalls</li>
+                <li><strong>Q&A:</strong> Time for questions and clarifications</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<style>
+.slides-list {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.slide-card {
+    border-left: 4px solid var(--primary-color);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.week-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    min-width: 80px;
+    text-align: center;
+}
+
+.card-title {
+    margin: 0;
+    flex: 1;
+}
+
+.card-title a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.card-title a:hover {
+    color: var(--primary-color);
+}
+
+.card-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.slide-format {
+    background-color: var(--surface-color);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.slide-topic {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.slide-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.practice-info {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    padding: 2rem;
+    border-radius: 0.75rem;
+}
+
+.practice-info h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.info-content ul {
+    margin-top: 1rem;
+}
+
+.info-content li {
+    margin-bottom: 0.75rem;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .card-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+    
+    .week-badge {
+        min-width: auto;
+        align-self: flex-start;
+    }
+}
+</style>
