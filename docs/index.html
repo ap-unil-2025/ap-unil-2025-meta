@@ -49,12 +49,12 @@ layout: default
                     <h3>Choose Your Project Repository</h3>
                     <p><strong>Select one template repo for your team (3-4 students)</strong> or propose a solo project. Registration deadline: <strong>Week 2 Friday 23:59 CET</strong>.</p>
                     <div class="project-options">
-                        <span class="option-tag">SIMCLT</span>
-                        <span class="option-tag">ECONGAMES</span>
-                        <span class="option-tag">RISKCALC</span>
-                        <span class="option-tag">PYMORT</span>
-                        <span class="option-tag">QSIM</span>
-                        <span class="option-tag solo">Solo Project</span>
+                        <a href="{{ '/projects/simclt' | relative_url }}" class="option-tag">SIMCLT</a>
+                        <a href="{{ '/projects/econgames' | relative_url }}" class="option-tag">ECONGAMES</a>
+                        <a href="{{ '/projects/riskcalc' | relative_url }}" class="option-tag">RISKCALC</a>
+                        <a href="{{ '/projects/pymort' | relative_url }}" class="option-tag">PYMORT</a>
+                        <a href="{{ '/projects/qsim' | relative_url }}" class="option-tag">QSIM</a>
+                        <a href="{{ '/projects/solo-free-topic' | relative_url }}" class="option-tag solo">Solo Project</a>
                     </div>
                     <a href="{{ '/projects' | relative_url }}" class="btn btn-primary">Choose Project</a>
                 </div>
@@ -208,10 +208,24 @@ layout: default
     font-size: 0.8rem;
     font-weight: 500;
     font-family: monospace;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.option-tag:hover {
+    background: #1d4ed8;
+    color: white;
+    transform: translateY(-1px);
+    text-decoration: none;
 }
 
 .option-tag.solo {
     background: var(--secondary-color);
+}
+
+.option-tag.solo:hover {
+    background: #4b5563;
 }
 
 .btn-primary {
