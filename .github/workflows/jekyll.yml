@@ -41,7 +41,11 @@ jobs:
       - name: Build with Jekyll
         run: |
           cd docs
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          if [ "${{ github.ref }}" = "refs/heads/experimental/full-website" ]; then
+            bundle exec jekyll build --baseurl "/meta"
+          else
+            bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          fi
         env:
           JEKYLL_ENV: production
 
