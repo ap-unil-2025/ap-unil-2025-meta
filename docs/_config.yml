@@ -1,7 +1,7 @@
 
 title: "Advanced Programming 2025"
 description: "Course materials and resources for Advanced Programming at UNIL"
-baseurl: "/meta"
+baseurl: "/course-materials"
 url: "https://ap-unil-2025.github.io"
 
 markdown: kramdown

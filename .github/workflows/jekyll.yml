@@ -42,7 +42,7 @@ jobs:
         run: |
           cd docs
           if [ "${{ github.ref }}" = "refs/heads/experimental/full-website" ]; then
-            bundle exec jekyll build --baseurl "/meta"
+            bundle exec jekyll build --baseurl "/course-materials"
           else
             bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
           fi
