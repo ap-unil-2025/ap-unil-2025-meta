@@ -35,16 +35,16 @@ defaults:
 collections:
   lessons:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:name.html
   assignments:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:name.html
   projects:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:name.html
   showcase:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:name.html
 
 sass:
   style: compressed
